@@ -1,30 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
-<<<<<<< HEAD
-import { EmployeeComponent } from './component/employee/employee.component';
-=======
+import { EmployeeComponent } from './components/employee/employee.component';
+import { AddComponent } from './components/employee/add/add.component';
 import { ClientComponent } from './components/client/client.component';
->>>>>>> 0c5ad62f322c6a4e46319bc831f88977ba33a11b
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-<<<<<<< HEAD
-    EmployeeComponent
-=======
-    ClientComponent
->>>>>>> 0c5ad62f322c6a4e46319bc831f88977ba33a11b
+    EmployeeComponent,
+    AddComponent,
+    ClientComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

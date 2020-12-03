@@ -18,6 +18,7 @@ export class TestComponent implements OnInit {
         this.message = data.data;
         console.log(data);
       })
+      
   }
 
 }
