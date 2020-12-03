@@ -6,7 +6,7 @@ const client = require('../models/client');
 
 //Register 
 router.post('/register', (req, res, next) =>{
-    let newClient = newclient ({
+    let newClient = new client ({
         name: req.body.name,
         email: req.body.email,
         username: req.body.username,
