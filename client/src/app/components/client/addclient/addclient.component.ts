@@ -1,6 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ClientsService } from 'src/app/services/clients.service';
+import { AddclientService } from 'src/app/services/addclient.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +16,9 @@ export class AddclientComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private _clientService: ClientsService
+    private _clientService: ClientsService,
+    private _addclientService: AddclientService,
+    private router = Router
     ) { }
 
   ngOnInit(): void {
@@ -40,5 +44,17 @@ export class AddclientComponent implements OnInit {
 
   handleSubmit (){
     this._clientService.saveClient(this.clientAddForm.value);
+
+
+    this._addclientService.addClient(this.clientAddForm).subscribe(data =>{
+      if(data:success){
+        console.log('CLIENT ADDED SUCCESSFULLY')
+      } else {
+        console.log('FAILED TO ADD CLIENT')
+      }
+    });
   }
+
 }
+
+
