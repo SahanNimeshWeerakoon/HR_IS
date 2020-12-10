@@ -23,6 +23,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CalenderComponent } from './components/client/calender/calender.component';
+import { ClientsService } from 'src/app/services/clients.service';
+import { AddclientService } from 'src/app/services/addclient.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,7 @@ import { CalenderComponent } from './components/client/calender/calender.compone
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [AddclientService,ClientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

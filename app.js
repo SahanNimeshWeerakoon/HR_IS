@@ -8,8 +8,9 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 
-mongoose.connect(config.database).then (
-    () => {connsole.log('connected'+config.database);
+mongoose.connect(config.database,{ useNewUrlParser: true,useUnifiedTopology: true }).then (
+    () => {
+        console.log('connected'+config.database);
 });
 
 
