@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,Headers} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -9,14 +9,14 @@ import {Observable} from 'rxjs';
 })
 export class AddclientService {
   addClientToken: any;
-  client:any;
+  client: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  addClient(client):Observable<any>{
-     //let headers = new Headers();
-     //header.append('Content-Type','application/json');
-     return this.http.post('http://localhost:5000/client/addclient',client);
+  addClient(client): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:5000/client/addclient', client, { headers });
   }
 }
- 
+

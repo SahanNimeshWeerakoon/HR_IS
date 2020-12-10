@@ -7,9 +7,9 @@ export class ClientsService {
 
   constructor() { }
 
-//saving client 
-  saveClient(values){
+  //saving client 
+  saveClient(values) {
 
-  return console.log(values);
-}
+    return console.log(values);
+  }
 }
