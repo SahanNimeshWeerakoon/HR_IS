@@ -8,7 +8,5 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
-  getHello() {
-    return this.http.get('http://localhost:5000/test');
-  }
+ 
 }
