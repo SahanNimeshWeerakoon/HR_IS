@@ -7,27 +7,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { AddComponent } from './components/employee/add/add.component';
+import { EmployeelistComponent } from './components/employeelist/employeelist.component'; 
+
+
+
+
 import { AddclientComponent } from './components/client/addclient/addclient.component';
 import { ClientComponent } from './components/client/client.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavComponent } from './components/client/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { CalenderComponent } from './components/client/calender/calender.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { MatChipsModule} from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
-import { from } from 'rxjs';
-import { NavComponent } from './components/client/nav/nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { CalenderComponent } from './components/client/calender/calender.component';
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     EmployeeComponent,
+    AddComponent,
+    EmployeelistComponent,
+    
     AddclientComponent,
     ClientComponent,
     NavComponent,
@@ -40,18 +48,18 @@ import { CalenderComponent } from './components/client/calender/calender.compone
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    LayoutModule,
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
     MatChipsModule,
     MatSliderModule,
-    LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

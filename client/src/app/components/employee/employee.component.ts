@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeesService } from '../../services/employees.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+ 
 
-  ngOnInit(): void {
+  constructor (
+    private employeeservice:EmployeesService,
+    private router: Router,
+
+    ) { }
+  ngOnInit() {}
+
+  
+  
+   
+  
   }
 
-}
