@@ -18,7 +18,7 @@ export class AddclientComponent implements OnInit {
     private formBuilder: FormBuilder,
     private _clientService: ClientsService,
     private _addclientService: AddclientService,
-    private router = Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -44,17 +44,16 @@ export class AddclientComponent implements OnInit {
 
   handleSubmit() {
     this._clientService.saveClient(this.clientAddForm.value);
-
-
-    this._addclientService.addClient(this.clientAddForm).subscribe(data => {
+    
+    this._addclientService.addClient(this.clientAddForm.value).subscribe(data => {
       if (data.success) {
-        console.log('CLIENT ADDED SUCCESSFULLY')
+        console.log('CLIENT ADDED SUCCESSFULLY');
+        this.router.navigate(['clientList']);
       } else {
         console.log('FAILED TO ADD CLIENT')
       }
     });
   }
-
 }
 
 

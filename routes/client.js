@@ -6,11 +6,14 @@ const client = require('../models/client');
 
 //Register 
 router.post('/addclient', (req, res, next) =>{
+   // let body = JSON.parse(req.body);
+    let body = req.body;
+    console.log('body',body);
     let newClient = new client ({
-        name: req.body.name,
-        email: req.body.email,
-        address: req.body.address,
-        accountdetails: req.body.accountdetails,
+        name: body.name,
+        email: body.email,
+        address: body.address,
+        accountDetails: body.accountDetails,
     });
 
     client.addClient(newClient,(err,client) => {

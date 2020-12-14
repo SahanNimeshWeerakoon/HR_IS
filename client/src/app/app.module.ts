@@ -25,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 import { CalenderComponent } from './components/client/calender/calender.component';
 import { ClientsService } from 'src/app/services/clients.service';
 import { AddclientService } from 'src/app/services/addclient.service';
+import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { AddclientService } from 'src/app/services/addclient.service';
     AddclientComponent,
     ClientComponent,
     NavComponent,
-    CalenderComponent
+    CalenderComponent,
+    ClientlistComponent
   ],
   imports: [
     BrowserModule,

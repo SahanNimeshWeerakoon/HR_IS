@@ -16,7 +16,7 @@ const ClientSchema = mongoose.Schema ({
         type:String,
         required:true
     },
-    accountdetails:{
+    accountDetails:{
         type:String,
         required:true
     }
