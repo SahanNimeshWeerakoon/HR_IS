@@ -1,7 +1,6 @@
 
 
-<div class="container">
-<ul>
+<div class="container"><ul>
   
   <li id="dash"><a href="#DASHBOARD">DASHBOARD</a></li>
   <li><a href="#EMPLOYEES">EMPLOYEES</a></li>
@@ -16,33 +15,36 @@
 <form class="main" (submit)="handleSubmit()" [formGroup]="EmployeeAddForm" >
   <h1>ADD EMPLOYEE FORM</h1>
   <label> TYPE</label><br>
-  <input formControlName="Type" placeholder="Ex:Intern/Permenent/Temperory"><br>
+  <input type="text" required pattern="^[a-zA-Z]+$" formControlName="Type" placeholder="Ex:Intern/Permenent/Temperory"  ><br>
+ 
 
+ 
   <label> Name</label><br>
-  <input formControlName="Name" placeholder="john desilva"><br>
+  <input formControlName="Name" placeholder="john desilva" required ><br>
 
   <label> Address</label><br>
-  <input formControlName="Address" placeholder="address"><br>
+  <input formControlName="Address" placeholder="address" required><br>
   
   <label> NIC</label><br>
-  <input formControlName="NIC" placeholder="XXXXXXXXXX"><br>
+  <input formControlName="NIC" placeholder="XXXXXXXXXX" required ><br>
  
   <label> Bank Acc.No</label><br>
-  <input formControlName="BankAccountNo" placeholder="XXXXXXXx"><br>
+  <input formControlName="BankAccountNo" placeholder="XXXXXXXx" required><br>
  
   <label> Skillset</label><br>
-  <input formControlName="Skillset" placeholder="Ex:Programming/designing"><br>
+  <input formControlName="Skillset" placeholder="Ex:Programming/designing" required><br>
  
   
   <label> DOB</label><br>
-  <input formControlName="DOB" type="date"><br>
+  <input formControlName="DOB" type="date" required><br>
   
   <label> Date Of Join</label><br>
-  <input formControlName="DateOfJoin" type="date"><br>
+  <input formControlName="DateOfJoin" type="date" required><br>
   
   <label> Salary</label><br>
-  <input formControlName="Salary" type="number" min="1000" ><br>
+  <input formControlName="Salary" type="number" min="1000"  required><br>
  
-  <button>submit</button>
+  <button  >submit</button>
 
 </form>
+  
