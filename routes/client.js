@@ -5,12 +5,15 @@ const jwt = require('jsonwebtoken');
 const client = require('../models/client');
 
 //Register 
-router.post('/register', (req, res, next) =>{
+router.post('/addclient', (req, res, next) =>{
+   // let body = JSON.parse(req.body);
+    let body = req.body;
+    console.log('body',body);
     let newClient = new client ({
-        name: req.body.name,
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password,
+        name: body.name,
+        email: body.email,
+        address: body.address,
+        accountDetails: body.accountDetails,
     });
 
     client.addClient(newClient,(err,client) => {
