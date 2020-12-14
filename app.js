@@ -1,13 +1,16 @@
 const express = require('express');
 const cors = require('cors');
-const test = require('./routes/test');
-
-const mongoose=require('mongoose');
-const passport = require('passport');
-const path = require('path');
+const path = require ('path');
 const bodyParser = require('body-parser');
+const test = require('./routes/test');
+const client = require('./routes/client');
+const mongoose = require('mongoose');
 const config = require('./config/database');
-const database = require('./config/database');
+
+
+
+
+
 
 
 
@@ -31,15 +34,14 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-
+app.use(express.static(path.join(__dirname,'public')));
 // set up route
 app.use('/test', test);
 app.use('/', employee);
-
+app.use('/client', client);
 
 //passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 
 

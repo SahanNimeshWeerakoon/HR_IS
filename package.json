@@ -12,14 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "*",
-    "body-parser": "*",
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jsonwebtoken": "*",
-    "mongoose": "^5.11.5",
-    "passport": "*",
-    "passport-jwt": "*"
+    "mongoose": "^5.10.14"
   }
 }

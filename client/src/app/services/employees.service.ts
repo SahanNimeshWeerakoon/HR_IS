@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Http} from '@angular/http';
 import { map }  from 'rxjs/operators';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class EmployeesService {
    employee: any;
   
 
-  constructor(private http:Http) { }
+  constructor(private http:HttpClient) { }
 
   //save employee
  addemployee(employee){
