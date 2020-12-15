@@ -8,7 +8,7 @@ const client = require('../models/client');
 router.post('/addclient', (req, res, next) =>{
    // let body = JSON.parse(req.body);
     let body = req.body;
-    console.log('body',body);
+
     let newClient = new client ({
         name: body.name,
         email: body.email,
@@ -16,15 +16,23 @@ router.post('/addclient', (req, res, next) =>{
         accountDetails: body.accountDetails,
     });
 
-    client.addClient(newClient,(err,client) => {
-        if(err){
-            res.json({success: false, msg:'Failed to register client'});
+    newClient.save()
+        .then(data => {
+            return res.json({ success: true, msg: 'Added a new client', data: data });
+        })
+        .catch(err => {
+            return res.json({ success: false, msg: 'Something went wrong', data: err });
+        })
 
-        } else {
-            res.json({success: true, msg:'client registered'});
-        }
+    // client.addClient(newClient,(err,client) => {
+    //     if(err){
+    //         res.json({success: false, msg:'Failed to register client'});
+
+    //     } else {
+    //         res.json({success: true, msg:'client registered'});
+    //     }
     
-    });
+    // });
 
 });
 router.get('/authenticate', (req, res, next) =>{
