@@ -4,42 +4,53 @@ const config = require('../config/database');
 
 
 //client schema
-const ClientSchema = mongoose.Schema ({
+
+const ClientSchema = mongoose.Schema({
     name: {
-    type:String
+        type: String,
     },
-    email:{
-        type:String,
-        required:true
+    email: {
+        type: String,
+        required: true
     },
-    address:{
-        type:String,
-        required:true
+    address: {
+        type: String,
+        required: true
     },
-    accountDetails:{
-        type:String,
-        required:true
+    accountDetails: {
+        type: String,
+        required: true
+    },
+    noOfProjects: {
+        type: String,
+        default: 0
+
+    },
+    amountPaid: {
+        type: String,
+        default: 0
     }
 });
 
-const Client = module.exports = mongoose.model('Client', ClientSchema);
+module.exports = mongoose.model('Client', ClientSchema);
 
-module.exports.getClientById = function(id, callback){
-    Client.findById(id,callback);
-}
 
-module.exports.getClientByname = function(name, callback){
-    const query = {name:name}
-    Client.findOne(query,callback);
-}
+// module.exports.getClientById = function (id, callback) {
+//     Client.findById(id, callback);
+// }
 
-module.exports.addClient = function(newClient,callback){
-    bcrypt.genSalt(10, (err,salt) => {
-        bcrypt.hash(newClient.accountdetails,salt, (err,hash) =>{
-            if (err) throw err;
-            newClient.accountdetails =hash;
-            newClient.save(callback);
-        });
-    });
-}
+// module.exports.getClientByname = function (name, callback) {
+//     const query = { name: name }
+//     Client.findOne(query, callback);
+// }
+
+// module.exports.addClient = function (newClient, callback) {
+//     bcrypt.genSalt(10, (err, salt) => {
+//         bcrypt.hash(newClient.accountDetails, salt, (err, hash) => {
+//             if (err) throw err;
+//             newClient.accountDetails = hash;
+//             newClient.save(callback);
+//         });
+//     });
+// }
 
