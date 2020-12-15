@@ -1,1 +1,17 @@
-<p>employee works!</p>
+<div class="employee-list">
+    <div class="employee-table">
+       <div class="parent">
+          <div class="child">Name</div>
+          <div class="child">Department</div>
+          <div class="child">Date Of Join</div>
+          <div class="child">Last Paid</div>
+       </div>
+       <div class="parent" *ngFor="let employee of employeelist">
+          <div class="child">{{employee.Name}}</div>    
+          <div class="child">{{employee.Skillset}}</div>        
+         <div class="child">{{employee.DateOfJoin}}</div>
+         <div class="child">{{employee.lastpaid}}</div>
+         </div>
+            
+    </div>
+</div>

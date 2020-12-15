@@ -4,10 +4,21 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 var mongo = require('mongodb');
 
-var  url = 'mongodb://localhost:27017/meanapp';
 
-const Employee = require('../models/employee');
-const employee = require('../models/employee');
+
+const Employee = require('../models/Employee');
+
+
+
+router.get('/', (req, res)=>{
+   Employee.find({})
+      .then(data => {
+         res.json(data);
+      })
+      .catch((err)=>{
+         console.log(err);
+      })
+});
 
 router.post('/addEmployee', (req, res, next) => {
     let newEmployee = new Employee({
@@ -20,6 +31,7 @@ router.post('/addEmployee', (req, res, next) => {
     DOB: req.body.DOB,
     DateOfJoin: req.body.DateOfJoin,
     Salary: req.body.Salary,
+    
     
    });
 
@@ -45,17 +57,6 @@ router.post('/addEmployee', (req, res, next) => {
  });
   
 
- router.get('/profile', (req, res) => {
-    console.log('Get request for all employee');
-    employee.find({})
-    .exec(function(err,employee){
-       if(err){
-          console.log('error retreivi');
-       }else{
-          res.json(employee);
-       }
-    })
 
- });
 
 module.exports = router;
