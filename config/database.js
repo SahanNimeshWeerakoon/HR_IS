@@ -1,4 +1,4 @@
 module.exports = {
-    database: 'mongodb+srv://gayantha1234:gayantha1234@official.knybp.mongodb.net/Official?retryWrites=true&w=majority',
-    secret: 'secret'
+    database:'mongodb+srv://ranuka123:ranuka123@hris.j3a1m.mongodb.net/HRIS?retryWrites=true&w=majority',
+    secret: 'yoursecret'
 }

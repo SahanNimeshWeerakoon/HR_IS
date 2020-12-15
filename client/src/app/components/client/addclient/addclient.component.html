@@ -3,7 +3,7 @@
 <div class="header">
     <h2>ADD CLIENT</h2>
 </div>
-<form (submit)="handleSubmit()" [formGroup]="clientAddForm" class="main_form">
+<form  [formGroup]="clientAddForm" class="main_form">
 
     <mat-form-field>
         <input matInput placeholder="Name" formControlName="name">
@@ -24,7 +24,7 @@
     
     <br>
 
-    <button class="main_button" mat-raised-button color="primary">ADD CLIENT</button>
+<button class="main_button" mat-raised-button color="primary" (click)="handleSubmit()">ADD CLIENT</button>
 
 </form>
 

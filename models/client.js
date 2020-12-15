@@ -12,11 +12,11 @@ const ClientSchema = mongoose.Schema ({
         type:String,
         required:true
     },
-    username:{
+    address:{
         type:String,
         required:true
     },
-    password:{
+    accountDetails:{
         type:String,
         required:true
     }
@@ -28,17 +28,17 @@ module.exports.getClientById = function(id, callback){
     Client.findById(id,callback);
 }
 
-module.exports.getClientByUsername = function(username, callback){
-    const query = {username:username}
+module.exports.getClientByname = function(name, callback){
+    const query = {name:name}
     Client.findOne(query,callback);
 }
 
 module.exports.addClient = function(newClient,callback){
     bcrypt.genSalt(10, (err,salt) => {
-        bcrypt.hash(newClient.password,salt, (err,hash) =>{
+        bcrypt.hash(newClient.accountdetails,salt, (err,hash) =>{
             if (err) throw err;
-            newClient.password =hash;
-            newUser.save(callback);
+            newClient.accountdetails =hash;
+            newClient.save(callback);
         });
     });
 }
