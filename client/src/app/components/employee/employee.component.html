@@ -1,1 +1,26 @@
-<p>employee works!</p>
+<a routerLink="/addEmployee">
+   <button class="btn" type="button">ADD EMPLOYEE</button>
+</a>
+<div class="employee-list">
+   <div class="employee-table">
+      <h1>EMPLOYEE LIST</h1>
+      <div class="parent">
+         <div class="child">Name</div>
+         <div class="child">Department</div>
+         <div class="child">Date Of Join</div>
+         <div class="child">Last Paid</div>
+         <div class="child"></div>
+      </div>
+      <div class="parent" *ngFor="let employee of employeelist">
+         <div class="child">{{employee.Name}}</div>    
+         <div class="child">{{employee.Skillset}}</div>        
+         <div class="child">{{employee.DateOfJoin}}</div>
+         <div class="child">{{employee.lastpaid}}</div>
+         <div class="child">
+            <a routerLink="">
+               <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">remove_red_eye</mat-icon>
+            </a>
+         </div>
+      </div>
+   </div>
+</div>
