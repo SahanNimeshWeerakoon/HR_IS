@@ -1,9 +1,41 @@
-.parent{
+.parent,.parent1{
     display: flex;
-    justify-content: space-around;
-     align-items: center;
+    justify-content:flex-end;
+    align-items: center;
+    margin: 4%;
+    flex-direction:row;
+
      .child{
-         border: 1px solid;
-         width:50%;
+         width:20%;  
+         font-size: 20px;
+        
+     }
+     .child1{
+        width:20%;
+        font-size: 27px;
+        font-weight: bold; 
+        font-family: 'Times New Roman', Times, serif;
      }
 }
+h1{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn{
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 3px 3px 5px #3153c2;
+        border-radius: 48px;
+         
+}
+
+
+
+
+
+
+

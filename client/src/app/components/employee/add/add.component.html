@@ -1,50 +1,60 @@
-
-
-<div class="container"><ul>
-  
-  <li id="dash"><a href="#DASHBOARD">DASHBOARD</a></li>
-  <li><a href="#EMPLOYEES">EMPLOYEES</a></li>
-  <li><a href="#CLIENT">CLIENT</a></li>
-  <li><a href="#PROJECTS">PROJECTS</a></li>
-</ul>
+<div class="add-employee">
+  <div class="form">
+    <form class="main" (submit)="handleSubmit()" [formGroup]="EmployeeAddForm" >
+      <h1>ADD EMPLOYEE</h1>
+      <div class="form-group">
+        <label for="type"> TYPE</label>
+        <select formControlName="Type" id="type">
+          <option value="permanent">Permanent</option>
+          <option value="contract">Contract Basis</option>
+          <option value="intern">Intern</option>
+        </select>
+      </div>
+      <!-- <input type="text" required pattern="^[a-zA-Z]+$" formControlName="Type" placeholder="Ex:Intern/Permenent/Temperory"  > -->
+      
+      <div class="form-group">
+        <label> Name</label>
+        <input formControlName="Name" placeholder="john desilva" required >
+      </div>
+      
+      <div class="form-group">
+        <label> Address</label>
+        <input formControlName="Address" placeholder="address" required>
+      </div>
+      
+      <div class="form-group">
+        <label> NIC</label>
+        <input formControlName="NIC" placeholder="XXXXXXXXXX" required >
+      </div>
+      
+      <div class="form-group">
+        <label> Bank Acc.No</label>
+        <input formControlName="BankAccountNo" placeholder="XXXXXXXx" required>
+      </div>
+      
+      <div class="form-group">
+        <label> Skillset</label>
+        <input formControlName="Skillset" placeholder="Ex:Programming/designing" required>
+      </div>
+      
+      <div class="form-group">
+        <label> DOB</label>
+        <input formControlName="DOB" type="date" required>
+      </div>
+      
+      <div class="form-group">
+        <label> Date Of Join</label>
+        <input formControlName="DateOfJoin" type="date" required>
+      </div>
+      
+      <div class="form-group">
+        <label> Salary</label>
+        <input formControlName="Salary" type="number" min="1000"  required>
+      </div>
+     
+      <button>submit</button>
+    
+    </form>
+  </div>
 </div>
-
-
-
-
-<form class="main" (submit)="handleSubmit()" [formGroup]="EmployeeAddForm" >
-  <h1>ADD EMPLOYEE FORM</h1>
-  <label> TYPE</label><br>
-  <input type="text" required pattern="^[a-zA-Z]+$" formControlName="Type" placeholder="Ex:Intern/Permenent/Temperory"  ><br>
- 
-
- 
-  <label> Name</label><br>
-  <input formControlName="Name" placeholder="john desilva" required ><br>
-
-  <label> Address</label><br>
-  <input formControlName="Address" placeholder="address" required><br>
-  
-  <label> NIC</label><br>
-  <input formControlName="NIC" placeholder="XXXXXXXXXX" required ><br>
- 
-  <label> Bank Acc.No</label><br>
-  <input formControlName="BankAccountNo" placeholder="XXXXXXXx" required><br>
- 
-  <label> Skillset</label><br>
-  <input formControlName="Skillset" placeholder="Ex:Programming/designing" required><br>
- 
-  
-  <label> DOB</label><br>
-  <input formControlName="DOB" type="date" required><br>
-  
-  <label> Date Of Join</label><br>
-  <input formControlName="DateOfJoin" type="date" required><br>
-  
-  <label> Salary</label><br>
-  <input formControlName="Salary" type="number" min="1000"  required><br>
- 
-  <button  >submit</button>
-
-</form>
   
