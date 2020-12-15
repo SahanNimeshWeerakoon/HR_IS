@@ -13,7 +13,10 @@ export class TestComponent implements OnInit {
   constructor(private _testService: TestService) { }
 
   ngOnInit(): void {
- 
+    this._testService.getTest()
+      .subscribe((test:any) => {
+        this.message = test.data;
+      })
       
   }
 

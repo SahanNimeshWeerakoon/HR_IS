@@ -8,42 +8,35 @@ const bcrypt = require('bcryptjs');
 const EmployeeSchema = mongoose.Schema({
     Type: {
         type: String,
-        
     },
     Name: {
         type: String,
-       
     },
     Address: {
         type: String
-
-       
     },
     NIC: {
         type: String
-   
-       
     },
     BankAccountNo: {
         type: String
-        
     },
     Skillset: {
         type: String
-         
     },
     DOB: {
         type:Date
-        
     },
     DateOfJoin: {
-        type:Date
-        
+        type:Date   
     },
     Salary: {
           type: String
-         
-    }
+    },
+    lastpaid:{
+        type:String,
+        default:0
+    },
  
 });
 

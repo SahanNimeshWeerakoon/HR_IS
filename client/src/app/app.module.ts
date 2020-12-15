@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { AddComponent } from './components/employee/add/add.component';
-import { EmployeelistComponent } from './components/employeelist/employeelist.component'; 
+import { EmployeelistComponent } from './components/employee/employeelist/employeelist.component';
 
 
 

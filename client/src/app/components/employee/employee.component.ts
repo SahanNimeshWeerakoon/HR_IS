@@ -8,7 +8,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./employee.component.scss']
 })
 export class EmployeeComponent implements OnInit {
-
+  employeelist: any[];
  
 
   constructor (
@@ -16,11 +16,15 @@ export class EmployeeComponent implements OnInit {
     private router: Router,
 
     ) { }
-  ngOnInit() {}
-
+  ngOnInit():void{
   
+  this.employeeservice.fetchEmployee()
+  .subscribe(res => {
+    this.employeelist=res;
+    console.log(this.employeelist);
+  })
   
-   
+  }
   
   }
 

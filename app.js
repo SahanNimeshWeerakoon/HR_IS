@@ -14,7 +14,6 @@ mongoose.connect(config.database, {  useNewUrlParser: true, useUnifiedTopology: 
     .catch(err => console.log(err));
 
 const employee = require('./routes/Employee');
-
 // Set up cors middleware
 app.use(cors());
 
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname,'public')));
 // set up route
 app.use('/test', test);
-app.use('/', employee);
+app.use('/employee', employee);
 app.use('/client', client);
 
 //passport middleware
