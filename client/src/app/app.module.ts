@@ -23,6 +23,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CalenderComponent } from './components/client/calender/calender.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { DashboardComponent } from './authentication/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,10 @@ import { CalenderComponent } from './components/client/calender/calender.compone
     AddclientComponent,
     ClientComponent,
     NavComponent,
-    CalenderComponent
+    CalenderComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
