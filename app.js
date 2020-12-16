@@ -8,20 +8,11 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 
-mongoose.connect(config.database).then (
-    () => {connsole.log('connected'+config.database);
-});
-
-
-mongoose.connection.on('conntected', () =>{
-    console.log('Connected to database '+config.database);
-});  
-
-//on error 
-mongoose.connection.on('error', (err) => {
-    console.log('Database error:'+err);
-});
-
+mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true })
+.then (() => {
+    connsole.log('mongodb connected');
+})
+.catch(err => console.log(err));
 
 const app = new express();
 
