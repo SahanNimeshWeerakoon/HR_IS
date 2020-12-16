@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { AddComponent } from './components/employee/add/add.component';
-import { EmployeelistComponent } from './components/employee/employeelist/employeelist.component';
 
 
 
@@ -24,7 +23,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ClientsService } from 'src/app/services/clients.service';
-import { AddclientService } from 'src/app/services/addclient.service';
 import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -37,8 +35,6 @@ import { MatSliderModule } from '@angular/material/slider';
     TestComponent,
     EmployeeComponent,
     AddComponent,
-    EmployeelistComponent,
-    
     AddclientComponent,
     ClientComponent,
     NavComponent,
@@ -63,7 +59,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatIconModule,
     MatListModule
   ],
-  providers: [AddclientService,ClientsService],
+  providers: [ClientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

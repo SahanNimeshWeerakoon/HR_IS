@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -13,8 +13,9 @@ export class ClientsService {
   }
 
   //saving client 
-  saveClient(values) {
-
-    return console.log(values);
+  saveClient(client) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:5000/client/addclient', client, { headers });
   }
 }
