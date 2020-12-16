@@ -19,7 +19,10 @@ export class ClientlistComponent {
 
   ngOnInit(): void {
     //fetch
-    this.clientService.fetchClient().subscribe((res=>{this.clientList=res;}))
+    this.clientService.fetchClient()
+      .subscribe(res => {
+        this.clientList = res;
+      });
   }
 
 
