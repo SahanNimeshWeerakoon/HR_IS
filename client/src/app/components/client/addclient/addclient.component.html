@@ -1,29 +1,32 @@
 
-  <app-nav></app-nav> <app-calender></app-calender>
+  <!-- <app-nav></app-nav> <app-calender></app-calender>
 <div class="header">
     <h2>ADD CLIENT</h2>
+</div> -->
+<div class="add-client">
+    <div class="form">
+        <form  [formGroup]="clientAddForm" class="main_form">
+            <h1>ADD CLIENT</h1>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input placeholder="Name" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="eg: user@gmail.com" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input placeholder="Address" formControlName="address">
+            </div>
+            <div class="form-group">
+                <label for="accountDet">Account Details</label>
+                <input placeholder="Account Details" formControlName="accountDetails">
+            </div>
+            
+            <button class="main_button" mat-raised-button color="primary" (click)="handleSubmit()">ADD CLIENT</button>
+        </form>
+    </div>
 </div>
-<form (submit)="handleSubmit()" [formGroup]="clientAddForm" class="main_form">
 
-    <mat-form-field>
-        <input matInput placeholder="Name" formControlName="name">
-    </mat-form-field>
-     <br>
-    <mat-form-field>
-        <input matInput placeholder = "Email" formControlName="email" >
-        <mat-hint>Ex:user@gmail.com</mat-hint>
-    </mat-form-field> 
-     <br>
-    <mat-form-field>
-        <input matInput placeholder="Address" formControlName="address">
-    </mat-form-field>
-     <br>
-    <mat-form-field>
-    <input matInput placeholder="Account Details" formControlName="accountDetails">
-    </mat-form-field>
-<br>
-
-<button class="main_button" mat-raised-button color="primary">ADD CLIENT</button>
-
-</form>
 

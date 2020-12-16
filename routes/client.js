@@ -1,34 +1,40 @@
 const express = require('express');
 const router = express.Router();
-const passport = require ('passport');
-const jwt = require('jsonwebtoken');
-const client = require('../models/client');
+const Client = require('../models/Client');
 
 //Register 
-router.post('/register', (req, res, next) =>{
-    let newClient = new client ({
-        name: req.body.name,
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password,
+router.post('/addclient', (req, res, next) => {
+    let body = req.body;
+
+    let newClient = new Client ({
+        name: body.name,
+        email: body.email,
+        address: body.address,
+        accountDetails: body.accountDetails,
     });
-
-    client.addClient(newClient,(err,client) => {
-        if(err){
-            res.json({success: false, msg:'Failed to register client'});
-
-        } else {
-            res.json({success: true, msg:'client registered'});
-        }
     
+    newClient.save().then(data => {
+        return res.json({ success: true, data })
+    }).catch(err => {
+        console.log(err)
     });
-
 });
-router.get('/authenticate', (req, res, next) =>{
+
+router.get('', (req, res, next) => {
+    Client.find()
+        .then(data =>{
+            return res.json(data)
+        })
+        .catch(err => {
+            console.log(err)
+        });
+});
+
+router.get('/authenticate', (req, res, next) => {
     res.send('AUTHENTICATE');
 
 });
-router.get('/profile', (req, res, next) =>{
+router.get('/profile', (req, res, next) => {
     res.send('PROFILE');
 
 });

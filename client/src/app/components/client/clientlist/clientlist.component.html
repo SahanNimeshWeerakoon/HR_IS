@@ -1,0 +1,25 @@
+<a routerLink="/addClient">
+  <button class="btn" type="button">ADD CLIENT</button>
+</a>
+
+<div class="client-list">
+  <div class="client-table">
+     <h1>CLIENTS LIST</h1>
+     <div class="parent">
+        <div class="child"> Name </div>
+        <div class="child"> No. of Projects </div>
+        <div class="child"> Amount Paid </div>
+        <div class="child"></div>
+     </div>
+     <div class="parent" *ngFor="let client of clientList">
+        <div class="child">{{ client.name }}</div>    
+        <div class="child">{{ client.noOfProjects  }}</div>        
+        <div class="child">{{ client.amountPaid }}</div>
+        <div class="child">
+          <span class="material-icons">
+            visibility
+          </span>
+        </div>
+     </div>
+  </div>
+</div>

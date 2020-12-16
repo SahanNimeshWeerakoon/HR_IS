@@ -1,24 +1,41 @@
+@import '../../../scss/mixins.scss';
+@import '../../../scss/vars.scss';
 
-* {
-  font-family: Arial, ;
+.add-client {
+  min-height: 100vh;
+  @include flex-center;
+  .form {
+    width: 40%;
+    form {
+      h1 {
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 18px;
+        label, input{
+          width: 100%;
+          padding: 6px 0;
+          color: #999;
+          &:focus {
+            color: #000;
+          }
+        }
+        label {
+          color: $text-color;
+        }
+        input, select {
+          border: 1px solid #EEE;
+        }
+      }
+      button {
+        padding: 5px 30px;
+        border: none;
+        background: $primary-color;
+        color: $secondary-color;
+        float: right;
+        border-radius: 30px;
+        margin-top: 20px;
+      }
+    }
+  }
 }
-
-.header{
-    text-align: center;
-    color: blue;
-    padding:20px;
-}
-.main_form{
-  width: 293px;
-  height: 1024px;
-  padding-right: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.main_button{
-  margin-bottom: 100%;
-  
- 
-}
-    
