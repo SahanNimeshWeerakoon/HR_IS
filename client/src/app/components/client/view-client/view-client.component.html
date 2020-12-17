@@ -1,0 +1,14 @@
+<div class="view-emp">
+    <div class="content" *ngIf="employee">
+        <h2>EMPLOYEE DETAILS</h2>
+        <div class="group" *ngFor="let prop of empProps">
+            <span *ngIf="(prop !== '_id' && prop !== '__v')" class="property">
+                <div class="title">
+                    <span>{{ prop }}</span>
+                    <span> : </span>
+                </div>
+                <div class="value">{{ employee[prop] }}</div>
+            </span>
+        </div>
+    </div>
+</div>
