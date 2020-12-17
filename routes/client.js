@@ -30,6 +30,16 @@ router.get('', (req, res, next) => {
         });
 });
 
+router.get('/find/:id', (req, res) => {
+   Client.findOne({ _id: req.params.id })
+      .then(data => {
+         return res.json(data);
+      })
+      .catch(err => {
+         console.log({from: 'find client', err});
+      })
+})
+
 router.get('/authenticate', (req, res, next) => {
     res.send('AUTHENTICATE');
 

@@ -29,6 +29,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { MatChipsModule} from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
+import { DashboardNavComponent } from './components/inc/dashboard-nav/dashboard-nav.component';
+import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
+import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
+import { ViewClientComponent } from './components/client/view-client/view-client.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +41,16 @@ import { MatSliderModule } from '@angular/material/slider';
     EmployeeComponent,
     AddComponent,
     AddclientComponent,
+    ClientlistComponent,
     ClientComponent,
     NavComponent,
     CalenderComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardNavComponent,
+    ViewEmployeeComponent,
+    ViewClientComponent
   ],
   imports: [
     BrowserModule,

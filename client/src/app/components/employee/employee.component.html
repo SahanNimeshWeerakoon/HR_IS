@@ -1,6 +1,7 @@
-<a routerLink="/addEmployee">
+<a routerLink="/dashboard/addEmployee">
    <button class="btn" type="button">ADD EMPLOYEE</button>
 </a>
+
 <div class="employee-list">
    <div class="employee-table">
       <h1>EMPLOYEE LIST</h1>
@@ -17,7 +18,7 @@
          <div class="child">{{employee.DateOfJoin}}</div>
          <div class="child">{{employee.lastpaid}}</div>
          <div class="child">
-            <a routerLink="">
+            <a routerLink="/dashboard/employee/{{employee._id}}">
                <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">remove_red_eye</mat-icon>
             </a>
          </div>

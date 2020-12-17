@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   logout() {
-    if (localStorage.removeItem('access_token') == null) {
+    if (localStorage.removeItem('access_token') == null && localStorage.removeItem('user') == null) {
       this.router.navigate(['login']);
     }
   }

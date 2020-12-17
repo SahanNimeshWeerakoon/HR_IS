@@ -1,4 +1,4 @@
-<a routerLink="/addClient">
+<a routerLink="/dashboard/addClient">
   <button class="btn" type="button">ADD CLIENT</button>
 </a>
 
@@ -16,10 +16,12 @@
         <div class="child">{{ client.noOfProjects  }}</div>        
         <div class="child">{{ client.amountPaid }}</div>
         <div class="child">
-          <span class="material-icons">
-            visibility
-          </span>
+          <a routerLink="/dashboard/client/{{client._id}}">
+            <span class="material-icons">
+              visibility
+            </span>
+          </a>
         </div>
-     </div>
+      </div >
   </div>
 </div>

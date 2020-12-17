@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-
-
 const Employee = require('../models/Employee');
-
-
 
 router.get('/', (req, res)=>{
    Employee.find({})
@@ -13,9 +9,19 @@ router.get('/', (req, res)=>{
          res.json(data);
       })
       .catch((err)=>{
-         console.log(err);
+         console.log({from: 'fetch emp', err});
       })
 });
+
+router.get('/find/:id', (req, res) => {
+   Employee.findOne({ _id: req.params.id })
+      .then(data => {
+         return res.json(data);
+      })
+      .catch(err => {
+         console.log({from: 'find emp', err});
+      })
+})
 
 router.post('/addEmployee', (req, res, next) => {
     let newEmployee = new Employee({
@@ -47,13 +53,5 @@ router.post('/addEmployee', (req, res, next) => {
     });
 
 });
-
-
- router.post('/authenticate', (req, res, next) => {
-    res.send('AUTHENTICATE');
- });
-  
-
-
 
 module.exports = router;
