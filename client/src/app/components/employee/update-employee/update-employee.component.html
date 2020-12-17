@@ -1,0 +1,60 @@
+<div class="add-employee">
+    <div class="form">
+      <form class="main" [formGroup]="EmployeeAddForm" >
+        <h1>ADD EMPLOYEE</h1>
+        <div class="form-group">
+          <label for="type"> TYPE</label>
+          <select formControlName="Type" id="type">
+            <option value="permanent">Permanent</option>
+            <option value="contract">Contract Basis</option>
+            <option value="intern">Intern</option>
+          </select>
+        </div>
+        <!-- <input type="text" required pattern="^[a-zA-Z]+$" formControlName="Type" placeholder="Ex:Intern/Permenent/Temperory"  > -->
+        
+        <div class="form-group">
+          <label> Name</label>
+          <input formControlName="Name" placeholder="john desilva" required >
+        </div>
+        
+        <div class="form-group">
+          <label> Address</label>
+          <input formControlName="Address" placeholder="address" required>
+        </div>
+        
+        <div class="form-group">
+          <label> NIC</label>
+          <input formControlName="NIC" placeholder="XXXXXXXXXX" required >
+        </div>
+        
+        <div class="form-group">
+          <label> Bank Acc.No</label>
+          <input formControlName="BankAccountNo" placeholder="XXXXXXXx" required>
+        </div>
+        
+        <div class="form-group">
+          <label> Skillset</label>
+          <input formControlName="Skillset" placeholder="Ex:Programming/designing" required>
+        </div>
+        
+        <div class="form-group">
+          <label> DOB</label>
+          <input formControlName="DOB" type="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label> Date Of Join</label>
+          <input formControlName="DateOfJoin" type="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label> Salary</label>
+          <input formControlName="Salary" type="number" min="1000"  required>
+        </div>
+       
+        <button>submit</button>
+        <button (click)="updateShits()">Update</button>
+      </form>
+    </div>
+  </div>
+    

@@ -33,6 +33,7 @@ import { DashboardNavComponent } from './components/inc/dashboard-nav/dashboard-
 import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
 import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
+import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ViewClientComponent } from './components/client/view-client/view-client
     DashboardComponent,
     DashboardNavComponent,
     ViewEmployeeComponent,
-    ViewClientComponent
+    ViewClientComponent,
+    UpdateEmployeeComponent
   ],
   imports: [
     BrowserModule,
