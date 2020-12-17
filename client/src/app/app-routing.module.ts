@@ -5,6 +5,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { AddclientComponent } from './components/client/addclient/addclient.component';
 import { TestComponent } from './components/test/test.component';
 import {ClientlistComponent} from './components/client/clientlist/clientlist.component';
+import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Employee', component: EmployeeComponent },
   { path: 'addClient', component: AddclientComponent },
   { path: 'clientList', component: ClientlistComponent},
+  { path: 'editEmployee/:id', component: EditEmployeeComponent },
   {
     path:'',
     pathMatch:'full',

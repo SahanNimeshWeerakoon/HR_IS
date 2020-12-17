@@ -29,6 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { MatChipsModule} from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
+import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { MatSliderModule } from '@angular/material/slider';
     ClientComponent,
     NavComponent,
     CalenderComponent,
-    ClientlistComponent
+    ClientlistComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,

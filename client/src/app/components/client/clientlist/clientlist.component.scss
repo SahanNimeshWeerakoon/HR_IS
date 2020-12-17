@@ -3,6 +3,7 @@
 .client-list {
     margin-top: 150px;
     @include flex-center;
+ 
     .client-table {
         width: 90%;
         .parent{

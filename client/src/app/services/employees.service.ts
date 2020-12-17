@@ -35,8 +35,14 @@ export class EmployeesService {
     return res;
   }))  
  }
+
  fetchEmployee():Observable<any[]>{
    return this.http.get<any[]>('http://localhost:5000/employee');
  }
- 
+ findEmployee(id):Observable<any>{
+  return this.http.get(`http://localhost:5000/employee/${id}`);
+
+}
+
+
 }

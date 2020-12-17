@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
-const jwt = require('jsonwebtoken');
 var mongo = require('mongodb');
 
 
@@ -19,7 +17,16 @@ router.get('/', (req, res)=>{
          console.log(err);
       })
 });
-
+router.get('/:id', (req, res)=>{
+   const id = req.params.id;
+   Employee.findOne({_id:id})
+      .then(data => {
+         res.json(data);
+      })
+      .catch((err)=>{
+         console.log(err);
+      })
+});
 router.post('/addEmployee', (req, res, next) => {
     let newEmployee = new Employee({
     Type: req.body.Type,
