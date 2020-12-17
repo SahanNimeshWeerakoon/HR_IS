@@ -34,24 +34,24 @@ export class EditClientComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this._clientsService.getClient(this.id)
     .subscribe(client => {
+      console.log('CLIENT WORKS');
       this.clientAddForm = this.formBuilder.group({
 
         name: [client.name],
         email: [client.email],
-        address: [client.address],
-        accountDetails: [client.accountDetails],
+        address: ["client.address"],
+        accountDetails: ["client.accountDetails"],
    
        })
   });
 }      
   updateClient() {
-    console.log('FUCK THARINDU PONNAYA');
     this._clientsService.update(this.id, this.clientAddForm.value)
       .subscribe(resp => {
       if(resp.status == true) { 
         this.router.navigate(['clientList']);
       } else {
-        console.log ('fucked');
+        console.log ('update client error ');
       }
      
     })

@@ -52,7 +52,7 @@ router.put('/:id', (req, res,) => {
         accountDetails: req.client.accountDetails,
 
     }
-    client.findOneAndUpdate({ _id: id }, req.body)
+    Client.findOneAndUpdate({ _id: id }, client)
         .then(data => {
             return res.json({ success: true, data });
         })
