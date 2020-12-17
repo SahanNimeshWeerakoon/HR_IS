@@ -20,8 +20,7 @@ export class EmployeeComponent implements OnInit {
   
   this.employeeservice.fetchEmployee()
   .subscribe(res => {
-    this.employeelist=res;
-    console.log(this.employeelist);
+    this.employeelist = res;
   })
   
   }

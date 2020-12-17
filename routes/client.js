@@ -1,19 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
-const jwt = require('jsonwebtoken');
 const Client = require('../models/Client');
 
 //Register 
 router.post('/addclient', (req, res, next) => {
-    // let body = JSON.parse(req.body);
     let body = req.body;
+<<<<<<< HEAD
     let newClient = new Client({
+=======
+
+    let newClient = new Client ({
+>>>>>>> 5c4d70d57ee34c8d4534f89d0f1ae2314d558def
         name: body.name,
         email: body.email,
         address: body.address,
         accountDetails: body.accountDetails,
     });
+<<<<<<< HEAD
 
 
 
@@ -33,6 +36,24 @@ router.get('', (req, res, next) => {
     }).catch(err => {
         console.log(err)
     });
+=======
+    
+    newClient.save().then(data => {
+        return res.json({ success: true, data })
+    }).catch(err => {
+        console.log(err)
+    });
+});
+
+router.get('', (req, res, next) => {
+    Client.find()
+        .then(data =>{
+            return res.json(data)
+        })
+        .catch(err => {
+            console.log(err)
+        });
+>>>>>>> 5c4d70d57ee34c8d4534f89d0f1ae2314d558def
 });
 router.get('/:id', (req, res,) => {
     const id = req.params.id;
@@ -54,6 +75,7 @@ router.put('/:id', (req, res,) => {
         address: req.body.address,
         accountDetails: req.body.accountDetails,
 
+<<<<<<< HEAD
 
     }
     Client.findOneAndUpdate({ _id: id }, req.body)
@@ -63,6 +85,20 @@ router.put('/:id', (req, res,) => {
         .catch((err) => {
             console.log(err);
         })
+=======
+router.get('/find/:id', (req, res) => {
+   Client.findOne({ _id: req.params.id })
+      .then(data => {
+         return res.json(data);
+      })
+      .catch(err => {
+         console.log({from: 'find client', err});
+      })
+})
+
+router.get('/authenticate', (req, res, next) => {
+    res.send('AUTHENTICATE');
+>>>>>>> 5c4d70d57ee34c8d4534f89d0f1ae2314d558def
 
 });
 

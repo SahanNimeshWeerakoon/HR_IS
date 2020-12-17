@@ -1,51 +1,65 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { AddComponent } from './components/employee/add/add.component';
-import { EmployeelistComponent } from './components/employee/employeelist/employeelist.component';
-
-
-
-
 import { AddclientComponent } from './components/client/addclient/addclient.component';
 import { ClientComponent } from './components/client/client.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './components/client/nav/nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { DashboardComponent } from './authentication/dashboard/dashboard.component';
 import { CalenderComponent } from './components/client/calender/calender.component';
+import { AuthInterceptor } from './auth.interceptor';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ClientsService } from 'src/app/services/clients.service';
-import { AddclientService } from 'src/app/services/addclient.service';
-import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { MatChipsModule} from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
+<<<<<<< HEAD
 import { EditClientComponent } from './components/client/edit-client/edit-client.component';
+=======
+import { DashboardNavComponent } from './components/inc/dashboard-nav/dashboard-nav.component';
+import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
+import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
+import { ViewClientComponent } from './components/client/view-client/view-client.component';
+
+>>>>>>> 5c4d70d57ee34c8d4534f89d0f1ae2314d558def
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     EmployeeComponent,
     AddComponent,
-    EmployeelistComponent,
-    
     AddclientComponent,
+    ClientlistComponent,
     ClientComponent,
     NavComponent,
     CalenderComponent,
+<<<<<<< HEAD
     ClientlistComponent,
     EditClientComponent
+=======
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    DashboardNavComponent,
+    ViewEmployeeComponent,
+    ViewClientComponent
+>>>>>>> 5c4d70d57ee34c8d4534f89d0f1ae2314d558def
   ],
   imports: [
     BrowserModule,
@@ -65,7 +79,14 @@ import { EditClientComponent } from './components/client/edit-client/edit-client
     MatIconModule,
     MatListModule
   ],
-  providers: [AddclientService,ClientsService],
+  providers: [
+    ClientsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

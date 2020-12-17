@@ -3,33 +3,20 @@ const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
 // Defining client Schema
-const ClientSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
     name: {
         type: String,
+        required: true
     },
     email: {
         type: String,
         required: true
     },
-    address: {
+    password: {
         type: String,
         required: true
-    },
-    accountDetails: {
-        type: String,
-        required: true
-    },
-    noOfProjects: {
-        type: String,
-        default: 0
-
-    },
-    amountPaid: {
-        type: String,
-        default: 0
     }
 });
 
-module.exports = mongoose.model('Client', ClientSchema);
-
+module.exports = mongoose.model('User', UserSchema);
 

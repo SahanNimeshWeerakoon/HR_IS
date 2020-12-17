@@ -1,7 +1,7 @@
-@import '../../../scss/mixins.scss';
-@import '../../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
 
-.add-client {
+.register {
   min-height: 100vh;
   @include flex-center;
   .form {
@@ -12,7 +12,7 @@
       }
       .form-group {
         margin-bottom: 18px;
-        label, input{
+        label, input, select {
           width: 100%;
           padding: 6px 0;
           color: #999;
@@ -28,7 +28,7 @@
         }
       }
       button {
-        padding: 5px 30px;
+        padding: 10px 30px;
         border: none;
         background: $primary-color;
         color: $secondary-color;
