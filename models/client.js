@@ -35,7 +35,7 @@ const ClientSchema = mongoose.Schema({
 module.exports = mongoose.model('Client', ClientSchema);
 
 
-// module.exports.getClientById = function (id, callback) {
+// //module.exports.getClientById = function (id, callback) {
 //     Client.findById(id, callback);
 // }
 
