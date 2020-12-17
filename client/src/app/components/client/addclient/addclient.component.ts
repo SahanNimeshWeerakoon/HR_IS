@@ -44,7 +44,7 @@ export class AddclientComponent implements OnInit {
     this._clientService.saveClient(this.clientAddForm.value).subscribe((data:any) => {
       if (data.success) {
         console.log('CLIENT ADDED SUCCESSFULLY');
-        this.router.navigate(['clientList']);
+        this.router.navigate(['/dashboard/clients']);
       } else {
         console.log('FAILED TO ADD CLIENT')
       }
