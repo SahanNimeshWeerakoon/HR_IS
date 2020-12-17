@@ -1,7 +1,7 @@
 
 <div class="add-employee">
     <div class="form">
-      <form class="main"  [formGroup]="EmployeeAddForm" >
+      <form class="main" (submit)="handleSubmit()" [formGroup]="EmployeeAddForm" >
         <h1>ADD EMPLOYEE</h1>
         <div class="form-group">
           <label for="type"> TYPE</label>
@@ -53,8 +53,8 @@
           <input formControlName="Salary" type="number" required>
         </div>
        
-        <button>submit</button>
-      <button>edit</button>
+       
+        <button >Update</button>
       </form>
     </div>
   </div>

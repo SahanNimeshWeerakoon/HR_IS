@@ -1,10 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const path = require ('path');
+const mongoose = require('mongoose');
+
 const test = require('./routes/test');
 const client = require('./routes/client');
-const mongoose = require('mongoose');
-const config = require('./config/database');
+const config = require('./config/database'); 
+const user = require('./routes/user');
+const employee = require('./routes/Employee');
 
 const app = new express();
 
@@ -13,7 +16,6 @@ mongoose.connect(config.database, {  useNewUrlParser: true, useUnifiedTopology: 
     .then(() => console.log('mongodb connected'))
     .catch(err => console.log(err));
 
-const employee = require('./routes/Employee');
 // Set up cors middleware
 app.use(cors());
 
@@ -24,12 +26,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use('/test', test);
 app.use('/employee', employee);
 app.use('/client', client);
-
-//passport middleware
-
-
-
-
+app.use('/user', user);
 
 //port number
 const port = 5000;

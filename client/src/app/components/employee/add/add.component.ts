@@ -35,9 +35,10 @@ export class AddComponent implements OnInit {
   handleSubmit(){
     this._employeeService.addemployee(this.EmployeeAddForm.value)
     .subscribe( Response => {
-      this.router.navigate(['Employee']);
+      this.router.navigate(['/dashboard/employees']);
     });
   }
+
 }
 
  

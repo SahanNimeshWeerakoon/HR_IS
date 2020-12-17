@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Client = require('../models/Client');
 
 //Register 
@@ -30,6 +29,16 @@ router.get('', (req, res, next) => {
             console.log(err)
         });
 });
+
+router.get('/find/:id', (req, res) => {
+   Client.findOne({ _id: req.params.id })
+      .then(data => {
+         return res.json(data);
+      })
+      .catch(err => {
+         console.log({from: 'find client', err});
+      })
+})
 
 router.get('/authenticate', (req, res, next) => {
     res.send('AUTHENTICATE');

@@ -35,7 +35,7 @@ this.employeeService.findEmployee(this.id)
     DOB:[employee.DOB],
     DateOfJoin:[employee.DateOfJoin],
     Salary:[employee.Salary]
-
+    
   });
 })
 
