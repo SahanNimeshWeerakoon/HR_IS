@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class ClientsService {
   constructor(private http: HttpClient) { }
 
-<<<<<<< HEAD
   //update client
   update(id, data): Observable<any>{
     return this.http.put(`http://localhost:5000/client/${id}`, data);
@@ -20,9 +19,7 @@ export class ClientsService {
     return this.http.get(`http://localhost:5000/client/${id}`);
     
   }
-=======
   // Fetch all clients
->>>>>>> 5c4d70d57ee34c8d4534f89d0f1ae2314d558def
   fetchClient(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:5000/client');
   }

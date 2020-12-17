@@ -1,7 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientsService } from 'src/app/services/clients.service';
-import { AddclientService } from 'src/app/services/addclient.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IfStmt } from '@angular/compiler';
 
@@ -17,8 +16,7 @@ export class EditClientComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private _clientService: ClientsService,
-    private _addclientService: AddclientService,
+    private _clientsService: ClientsService,
     private router: Router
   ) { }
   
@@ -34,7 +32,7 @@ export class EditClientComponent implements OnInit {
  
      })
     this.id = this.route.snapshot.paramMap.get('id');
-    this._clientService.getClient(this.id)
+    this._clientsService.getClient(this.id)
     .subscribe(client => {
       this.clientAddForm = this.formBuilder.group({
 
@@ -47,10 +45,11 @@ export class EditClientComponent implements OnInit {
   });
 }      
   updateClient() {
-    this._clientService.update(this.id, this.clientAddForm.value)
-    .subscribe(resp => {
-      if(resp.status == true) {
-        this.router.navigate(['clientList'])
+    console.log('FUCK THARINDU PONNAYA');
+    this._clientsService.update(this.id, this.clientAddForm.value)
+      .subscribe(resp => {
+      if(resp.status == true) { 
+        this.router.navigate(['clientList']);
       } else {
         console.log ('fucked');
       }
