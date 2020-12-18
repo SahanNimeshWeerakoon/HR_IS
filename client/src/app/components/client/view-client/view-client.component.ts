@@ -20,12 +20,12 @@ export class ViewClientComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.id = this.route.snapshot.paramMap.get('id');
-    // this.clientService.find(this.id)
-    //   .subscribe((emp: any) => {
-    //     this.employee = emp;
-    //     this.empProps = Object.getOwnPropertyNames(this.employee);
-    //   })
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.clientService.find(this.id)
+      .subscribe((emp: any) => {
+        this.employee = emp;
+        this.empProps = Object.getOwnPropertyNames(this.employee);
+      })
   }
 
 }
