@@ -1,10 +1,43 @@
-.main_form {
-  justify-content: center;
-  text-align: center;
+@import "../../../scss/mixins.scss";
+@import "../../../scss/vars.scss";
 
-  .child {
-    text-align: center;
-    width: 20%;
-    font-size: 20px;
+.add-client {
+  min-height: 100vh;
+  @include flex-center;
+  .form {
+    width: 40%;
+    form {
+      h1 {
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 18px;
+        label,
+        input {
+          width: 100%;
+          padding: 6px 0;
+          color: #999;
+          &:focus {
+            color: #000;
+          }
+        }
+        label {
+          color: $text-color;
+        }
+        input,
+        select {
+          border: 1px solid #eee;
+        }
+      }
+      button {
+        padding: 5px 30px;
+        border: none;
+        background: $primary-color;
+        color: $secondary-color;
+        float: right;
+        border-radius: 30px;
+        margin-top: 20px;
+      }
+    }
   }
 }
