@@ -45,4 +45,27 @@ router.post('/addEmployee', (req, res, next) => {
     });
 });
 
+router.put('/:id', (req, res)=>{
+   const id = req.params.id;
+   const employee = {
+      Type: req.body.Type,
+      Name: req.body.Name,
+      Address: req.body.Address,
+      NIC:req.body.NIC,
+      BankAccountNo: req.body.BankAccountNo,
+      Skillset: req.body.Skillset,
+      DOB: req.body.DOB,
+      DateOfJoin: req.body.DateOfJoin,
+      Salary: req.body.Salary,
+   }
+   
+   Employee.findOneAndUpdate({_id: id}, employee)
+      .then(data => {
+         return res.json({status: true, data});
+      })
+      .catch((err)=>{
+         console.log(err);
+      });
+});
+
 module.exports = router;

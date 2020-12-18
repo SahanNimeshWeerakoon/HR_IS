@@ -12,7 +12,7 @@ import { DashboardComponent } from './authentication/dashboard/dashboard.compone
 import { AuthGuard } from './guards/auth.guard';
 import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
-
+import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -31,6 +31,7 @@ const routes: Routes = [
       { path: 'client/:id', component: ViewClientComponent},
       { path: 'addClient', component: AddclientComponent },
       {path: 'editClient/:id', component:EditClientComponent},
+      { path: 'updateEmployee/:id', component: UpdateEmployeeComponent }
     ]
   },
 ];
