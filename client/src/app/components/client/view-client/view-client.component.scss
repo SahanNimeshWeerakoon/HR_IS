@@ -29,13 +29,17 @@
       }
     }
   }
-}
-button {
-  padding: 10px 40px;
-  border: none;
-  background: $primary-color;
-  color: $secondary-color;
-  float: right;
-  border-radius: 30px;
-  margin-top: 20px;
+  button {
+    padding: 10px 40px;
+    border: none;
+    background: $primary-color;
+    color: $secondary-color;
+    float: right;
+    border-radius: 30px;
+    margin-top: 20px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }

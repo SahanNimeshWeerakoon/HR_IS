@@ -9,7 +9,7 @@ import { IfStmt } from '@angular/compiler';
   templateUrl: './edit-client.component.html',
   styleUrls: ['./edit-client.component.scss']
 })
-export class EditClientComponent implements OnInit {
+export class EditClientComponent {
 
   clientAddForm: FormGroup;
   id:any;
