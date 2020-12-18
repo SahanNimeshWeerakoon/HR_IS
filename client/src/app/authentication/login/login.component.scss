@@ -1,55 +1,56 @@
-@import '../../scss/mixins.scss';
-@import '../../scss/vars.scss';
+@import "../../scss/mixins.scss";
+@import "../../scss/vars.scss";
 
 .login {
-    min-height: 100vh;
-    @include flex-center;
-    .form {
-        width: 40%;
-        border-radius: 25px;
-        position: relative;
-        box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.25);
-        padding: 115px 0px;
-        img {
-            width: 20%;
-            position: absolute;
-            top: -45px;
-            left: 40%;
-        }
-        form {
-            width: 50%;
-            margin: auto;
-            h2 {
-                text-align: center;
-            }
-            .form-group {
-                margin-bottom: 25px;
-                input, label {
-                    width: 100%;
-                }
-                label {
-                    font-size: 0.95em;
-                }
-                input {
-                    border: 1px solid #E4E4E4;
-                }
-            }
-            a {
-                display: block;
-                float: right;
-                color: $primary-color;
-                text-decoration: none;
-                margin-top: -20px;
-            }
-            button {
-                background: $primary-color;
-                color: #fff;
-                padding: 5px 30px;
-                border-radius: 30px;
-                border: none;
-                float: right;
-                margin-top: 30px;
-            }
-        }
+  min-height: 100vh;
+  @include flex-center;
+  .form {
+    width: 40%;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.25);
+    padding: 115px 0px;
+    img {
+      width: 20%;
+      position: absolute;
+      top: -45px;
+      left: 40%;
     }
+    form {
+      width: 50%;
+      margin: auto;
+      h2 {
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 25px;
+        input,
+        label {
+          width: 100%;
+        }
+        label {
+          font-size: 0.95em;
+        }
+        input {
+          border: 2px solid #e4e4e4;
+        }
+      }
+      a {
+        display: block;
+        float: right;
+        color: $primary-color;
+        text-decoration: none;
+        margin-top: -20px;
+      }
+      button {
+        background: $primary-color;
+        color: #fff;
+        padding: 5px 30px;
+        border-radius: 30px;
+        border: none;
+        float: right;
+        margin-top: 30px;
+      }
+    }
+  }
 }

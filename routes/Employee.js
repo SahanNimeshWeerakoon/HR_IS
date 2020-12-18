@@ -37,21 +37,12 @@ router.post('/addEmployee', (req, res, next) => {
     
     
    });
-
-   //  Employee.addEmployee(newEmployee, (err, employee) => {
-   //    if(err){
-   //       res.json({success: false, msg:'Failed to register employee'});
-   //        console.log(err);
-   //    }else{
-   //        res.json({success: true,msg:'Employee registered'});
-   //    }
-   // });
+   
     newEmployee.save().then( data =>{
     return res.json(data)
     }).catch(err=>{
        console.log(err);
     });
-
 });
 
 module.exports = router;
