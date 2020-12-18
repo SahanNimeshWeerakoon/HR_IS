@@ -1,0 +1,73 @@
+@import '../../../scss/mixins.scss';
+@import '../../../scss/vars.scss';
+
+.add-employee {
+  min-height: 100vh;
+  @include flex-center;
+
+  .form {
+    width: 50%;
+    
+    form {
+      h1 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 51px;
+      }
+      .form-group {
+        margin-bottom: 18px;
+        label, input, select {
+          width: 100%;
+          padding: 6px 0;
+          color: black;
+          &:focus {
+          color: #000;
+          }
+        }
+        label {
+        color:black;
+        font-size: 12px;
+        left: 0%;
+        right: 92.13%;
+        top: 0%;
+        bottom: 69.57%;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 28px;
+        }
+        input, select {
+        left: 0%;
+        right: 0%;
+        top: 50%;
+        bottom: 13.04%;
+        background: #FFFFFF;
+        border: 1px solid #ddbbbb;
+        box-sizing: border-box;
+        }
+      }
+      button {
+        float: right;   
+        width: 196px;
+        height: 42px;
+        left: 1077px;
+        top: 959px;
+        background: #5373D9;
+        border-radius: 40px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
