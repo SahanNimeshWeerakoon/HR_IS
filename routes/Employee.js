@@ -9,9 +9,19 @@ router.get('/', (req, res)=>{
          res.json(data);
       })
       .catch((err)=>{
-         console.log(err);
+         console.log({from: 'fetch emp', err});
       })
 });
+
+router.get('/find/:id', (req, res) => {
+   Employee.findOne({ _id: req.params.id })
+      .then(data => {
+         return res.json(data);
+      })
+      .catch(err => {
+         console.log({from: 'find emp', err});
+      })
+})
 
 router.post('/addEmployee', (req, res, next) => {
     let newEmployee = new Employee({

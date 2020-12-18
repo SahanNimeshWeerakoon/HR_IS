@@ -1,0 +1,47 @@
+<div class="admin-nav">
+    <ul>
+        <li>
+            <h3>
+                <a routerLink="/dashboard">Dashboard</a>
+            </h3>
+        </li>
+        <li>
+            <a routerLink="/dashboard/employees">
+                <span class="material-icons">
+                    groups
+                </span>
+                Employees
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/clients">
+                <span class="material-icons">
+                    insert_emoticon
+                </span>
+                Clients
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/users">
+                <span class="material-icons">
+                    person
+                </span>
+                Users
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/projects">
+                <span class="material-icons">
+                    book
+                </span>
+                Projects
+            </a>
+        </li>
+    </ul>
+    <button (click)="logout()">
+        <span class="material-icons">
+            backspace
+        </span>
+        LOGOUT
+    </button>
+</div>
