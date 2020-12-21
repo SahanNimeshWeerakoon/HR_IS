@@ -68,4 +68,15 @@ router.put('/:id', (req, res)=>{
       });
 });
 
+router.delete('/delete/:id', (req, res) => {
+   Employee.deleteOne({ _id: req.params.id })
+        .then(data => {
+            return res.json({ success: true, data });
+        })
+        .catch(err => {
+            console.log(err);
+            return res.json({ success: false, err })
+        })
+})
+
 module.exports = router;

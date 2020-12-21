@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.authService.isLoggedIn()) {
+      this.rotuer.navigate(['dashboard']);
+    }
     this.loginForm = this.formBuilder.group({
       email: [''],
       password: ['']
