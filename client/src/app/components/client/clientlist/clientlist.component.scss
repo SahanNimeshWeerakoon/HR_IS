@@ -1,4 +1,5 @@
 @import '../../../scss/mixins.scss';
+@import '../../../scss/vars.scss';
 
 .client-list {
     margin-top: 150px;
@@ -21,6 +22,16 @@
                 width:20%;  
                 font-size: 20px;
                 text-align: center;
+                a {
+                    padding: 0 10px;
+                    color: $primary-color;
+                    &:last-child {
+                        color: #f00;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
             }
             .child1{
                 width:20%;

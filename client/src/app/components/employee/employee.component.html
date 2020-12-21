@@ -7,7 +7,7 @@
       <h1>EMPLOYEE LIST</h1>
       <div class="parent">
          <div class="child">Name</div>
-         <div class="child">Department</div>
+         <div class="child">Skill Set</div>
          <div class="child">Date Of Join</div>
          <div class="child">Last Paid</div>
          <div class="child"></div>
@@ -20,6 +20,12 @@
          <div class="child">
             <a routerLink="/dashboard/employee/{{employee._id}}">
                <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">remove_red_eye</mat-icon>
+            </a>
+            <a routerLink="/dashboard/updateEmployee/{{employee._id}}">
+               <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">edit</mat-icon>
+            </a>
+            <a (click)="deleteEmployee(employee._id)">
+               <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">delete</mat-icon>
             </a>
          </div>
       </div>
