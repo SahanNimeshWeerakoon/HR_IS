@@ -10,5 +10,10 @@
                 <div class="value">{{ employee[prop] }}</div>
             </span>
         </div>
+
+        <a routerLink="/dashboard/updateEmployee/{{employee._id}}">
+            <button id="update">Update Details</button>
+        </a>
+        <button id="delete">Delete Employee</button>
     </div>
 </div>

@@ -4,7 +4,8 @@ import { AddComponent } from './components/employee/add/add.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { AddclientComponent } from './components/client/addclient/addclient.component';
 import { TestComponent } from './components/test/test.component';
-import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
+import {ClientlistComponent} from './components/client/clientlist/clientlist.component';
+import { EditClientComponent } from './components/client/edit-client/edit-client.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { DashboardComponent } from './authentication/dashboard/dashboard.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
       { path: 'clients', component: ClientlistComponent},
       { path: 'client/:id', component: ViewClientComponent},
       { path: 'addClient', component: AddclientComponent },
-      { path: 'updateEmployee/:id', component: UpdateEmployeeComponent }
+      { path: 'updateEmployee/:id', component: UpdateEmployeeComponent },
+      {path: 'editClient/:id', component:EditClientComponent},
     ]
   },
 ];

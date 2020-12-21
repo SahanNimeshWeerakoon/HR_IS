@@ -11,6 +11,7 @@ export class ViewEmployeeComponent implements OnInit {
   employee: any;
   empProps: any;
   id: String;
+ 
 
   constructor(
     private employeeService: EmployeesService,
@@ -23,7 +24,7 @@ export class ViewEmployeeComponent implements OnInit {
       .subscribe((emp: any) => {
         this.employee = emp;
         this.empProps = Object.getOwnPropertyNames(this.employee);
-      })
+      });
   }
 
 }

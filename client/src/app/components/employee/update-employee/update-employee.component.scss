@@ -1,9 +1,7 @@
-@import '../../../scss/mixins.scss';
-@import '../../../scss/vars.scss';
-
 .add-employee {
   min-height: 100vh;
-  @include flex-center;
+ display: flex;
+ justify-content: center;
 
   .form {
     width: 50%;
@@ -17,6 +15,7 @@
       }
       .form-group {
         margin-bottom: 18px;
+        
         label, input, select {
           width: 100%;
           padding: 6px 0;
@@ -25,6 +24,7 @@
           color: #000;
           }
         }
+        
         label {
         color:black;
         font-size: 12px;

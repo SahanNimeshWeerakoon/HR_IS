@@ -29,6 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { MatChipsModule} from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
+import { EditClientComponent } from './components/client/edit-client/edit-client.component';
 import { DashboardNavComponent } from './components/inc/dashboard-nav/dashboard-nav.component';
 import { ClientlistComponent } from './components/client/clientlist/clientlist.component';
 import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
@@ -52,7 +53,8 @@ import { UpdateEmployeeComponent } from './components/employee/update-employee/u
     DashboardNavComponent,
     ViewEmployeeComponent,
     ViewClientComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    EditClientComponent
   ],
   imports: [
     BrowserModule,
