@@ -9,10 +9,12 @@
                 </div>
                 <div class="value">{{ employee[prop] }}</div>
             </span>
-        
         </div>
         <button>
             <a routerLink="/dashboard/editClient/{{employee._id}}">EDIT CLIENT</a>
+        </button>
+        <button>
+            <a routerLink="/dashboard/clients" (click)="deleteClient(employee._id)">DELETE CLIENT</a>
         </button>
     </div>
 </div>

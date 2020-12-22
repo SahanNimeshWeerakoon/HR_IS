@@ -14,13 +14,20 @@
       </div>
       <div class="parent" *ngFor="let employee of employeelist">
          <div class="child">{{employee.Name}}</div>    
-         <div class="child">{{employee.Skillset}}</div>        
+         <div class="child">{{employee.Dep}}</div>        
          <div class="child">{{employee.DateOfJoin}}</div>
          <div class="child">{{employee.lastpaid}}</div>
          <div class="child">
             <a routerLink="/dashboard/employee/{{employee._id}}">
                <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">remove_red_eye</mat-icon>
             </a>
+            <a routerLink="/dashboard/updateEmployee/{{employee._id}}">
+               <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">edit</mat-icon>
+            </a>
+            <a (click)="deleteEmployee(employee._id)">
+               <mat-icon aria-hidden="false" aria-label="Example remove_red_eye icon">delete</mat-icon>
+            </a>
+          
          </div>
       </div>
    </div>

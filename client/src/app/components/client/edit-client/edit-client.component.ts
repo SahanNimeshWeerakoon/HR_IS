@@ -2,14 +2,14 @@ import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientsService } from 'src/app/services/clients.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IfStmt } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-client',
   templateUrl: './edit-client.component.html',
   styleUrls: ['./edit-client.component.scss']
 })
-export class EditClientComponent implements OnInit {
+export class EditClientComponent {
 
   clientAddForm: FormGroup;
   id:any;
@@ -18,16 +18,18 @@ export class EditClientComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private _clientsService: ClientsService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   updateClient() {
     this._clientsService.update(this.id, this.clientAddForm.value)
       .subscribe((resp) => {
-      if(resp.success == true) { 
+      if(resp.success == true) {
+        this.toastr.success('Client update successfull');
         this.router.navigate(['/dashboard/clients']);
       } else {
-        console.log ('update client error ');
+        this.toastr.error('Client update failed');
       }
     })
   }

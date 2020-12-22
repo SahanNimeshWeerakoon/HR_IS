@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map }  from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EmployeesService {
   
   employee: any;
@@ -35,4 +33,24 @@ export class EmployeesService {
   return this.http.get(`http://localhost:5000/employee/find/${id}`);
  }
  
+ // Find single employee
+ findEmployee(id): Observable<any> {
+  return this.http.get(`http://localhost:5000/employee/find/${id}`);
+ }
+
+ // Find employee by department
+ findEmpFromDep(dep): Observable<any> {
+   return this.http.get(`http://localhost:5000/employee/findByDep/${dep}`);
+ }
+
+ // Update an employee
+ updateEmployee(id, data): Observable<any> {
+  return this.http.put(`http://localhost:5000/employee/${id}`, data);
+ }
+
+ // Delte employee
+ deleteEmployee(id): Observable<any> {
+   return this.http.delete(`http://localhost:5000/employee/delete/${id}`);
+ }
+
 }

@@ -1,0 +1,61 @@
+<div class="add-project">
+    <div class="form">
+        <form  [formGroup]="projectAddForm" class="main_form">
+            <h1>ADD PROJECT</h1>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input placeholder="Project Name" formControlName="name">
+                <span class="danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    Please enter a name.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea placeholder="Project Description" formControlName="description"></textarea>
+                <span class="danger" *ngIf="description.invalid && (description.dirty || description.touched)">
+                    Please enter a description.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="client">Client</label>
+                <select formControlName="client" id="">
+                    <option value="">Select Client</option>
+                    <option *ngFor="let client of clients" value="{{ client._id }}">{{ client.name }}</option>
+                </select>
+                <span class="danger" *ngIf="client.invalid && (client.dirty || client.touched)">
+                    Please select a client.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="accountDet">Deadline</label>
+                <input type="date" formControlName="deadline" />
+                <span class="danger" *ngIf="deadline.invalid && (deadline.dirty || deadline.touched)">
+                    Please select a deadline.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="devs">Developers</label>
+                <select name="devs" id="devs" (change)="handleDevs($event)">
+                    <option value="">Select developers</option>
+                    <option *ngFor="let dev of devs" value="{{ dev._id }}">{{ dev.Name }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="dev-list">
+                    <div class="sing-dev" *ngFor="let selectedDev of selectedDevs">{{ selectedDev.Name }}</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select formControlName="status" id="status">
+                    <option value="0">Not Finished</option>
+                    <option value="1">Finished</option>
+                </select>
+            </div>
+            
+            <button class="main_button" mat-raised-button color="primary" (click)="handleSubmit()">ADD PROJECT</button>
+        </form>
+    </div>
+</div>
+
+

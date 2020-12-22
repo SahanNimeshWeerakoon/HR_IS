@@ -10,20 +10,30 @@ import { Router} from '@angular/router';
 export class EmployeeComponent implements OnInit {
   employeelist: any[];
  
-
   constructor (
     private employeeservice:EmployeesService,
     private router: Router,
+  ) { }
 
-    ) { }
+
+  
+  deleteEmployee(id) {
+    this.employeeservice.deleteEmployee(id)
+      .subscribe(resp => {
+        if(resp.success) {
+          this.ngOnInit();
+        } else {
+          console.log('Delete emploiyee error');
+        }
+      });
+  }
+  
   ngOnInit():void{
-  
-  this.employeeservice.fetchEmployee()
-  .subscribe(res => {
-    this.employeelist = res;
-  })
-  
+    this.employeeservice.fetchEmployee()
+    .subscribe(res => {
+      this.employeelist = res;
+    })  
   }
   
-  }
+}
 

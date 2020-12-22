@@ -1,0 +1,25 @@
+@import '../../../scss/vars.scss';
+
+.project {
+    width: 20%;
+    box-shadow: 3px 2px 8px #5373D9;
+    border-radius: 22px;
+    text-align: center;
+    padding: 10px 0px;
+    h3 {
+        color: $primary-color;
+        font-size: 2em;
+    }
+    .content {
+        text-align: left;
+        width: 50%;
+        margin: auto;
+        p {
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}

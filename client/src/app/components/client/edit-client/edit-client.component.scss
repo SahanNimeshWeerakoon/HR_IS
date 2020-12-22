@@ -1,43 +1,37 @@
 @import "../../../scss/mixins.scss";
 @import "../../../scss/vars.scss";
 
-.add-client {
+.edit-client {
   min-height: 100vh;
   @include flex-center;
-  .form {
-    width: 40%;
-    form {
-      h1 {
-        text-align: center;
-      }
-      .form-group {
-        margin-bottom: 18px;
-        label,
-        input {
-          width: 100%;
-          padding: 6px 0;
-          color: #999;
-          &:focus {
-            color: #000;
-          }
+  .main_form {
+    width: 30%;
+
+    h1 {
+      text-align: center;
+    }
+    .child {
+      margin-bottom: 44px;
+      font-weight: bold;
+      label,
+      input {
+        font-family: Arial;
+        width: 100%;
+        padding: 3px 0;
+        color: black;
+        &:focus {
+          color: #000;
         }
-        label {
-          color: $text-color;
-        }
-        input,
-        select {
-          border: 1px solid #eee;
-        }
-      }
-      button {
-        padding: 5px 30px;
-        border: none;
-        background: $primary-color;
-        color: $secondary-color;
-        float: right;
-        border-radius: 30px;
-        margin-top: 20px;
       }
     }
+  }
+  button {
+    padding: 10px 30px;
+    border: none;
+    background: $primary-color;
+    color: $secondary-color;
+    float: right;
+    border-radius: 30px;
+    margin-top: 20px;
   }
 }

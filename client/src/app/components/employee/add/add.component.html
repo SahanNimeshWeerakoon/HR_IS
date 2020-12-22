@@ -9,47 +9,86 @@
           <option value="contract">Contract Basis</option>
           <option value="intern">Intern</option>
         </select>
+        <span class="danger" *ngIf="Type.invalid && (Type.dirty || Type.touched)">
+            Please select a type.
+        </span>
       </div>
       <!-- <input type="text" required pattern="^[a-zA-Z]+$" formControlName="Type" placeholder="Ex:Intern/Permenent/Temperory"  > -->
       
       <div class="form-group">
         <label> Name</label>
         <input formControlName="Name" placeholder="john desilva" required >
+        <span class="danger" *ngIf="Name.invalid && (Name.dirty || Name.touched)">
+            Please enter a name.
+        </span>
       </div>
       
       <div class="form-group">
         <label> Address</label>
         <input formControlName="Address" placeholder="address" required>
+        <span class="danger" *ngIf="Address.invalid && (Address.dirty || Address.touched)">
+            Please enter a address.
+        </span>
       </div>
       
       <div class="form-group">
         <label> NIC</label>
         <input formControlName="NIC" placeholder="XXXXXXXXXX" required >
+        <span class="danger" *ngIf="NIC.invalid && (NIC.dirty || NIC.touched)">
+            Please enter a NIC number.
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label> Department </label>
+        <select formControlName="Dep">
+          <option value="">Select Department</option>
+          <option value="marketing">Marketing Department</option>
+          <option value="developing">Developing Department</option>
+        </select>
+        <span class="danger" *ngIf="Dep.invalid && (Dep.dirty || Dep.touched)">
+            Please select a department.
+        </span>
       </div>
       
       <div class="form-group">
         <label> Bank Acc.No</label>
         <input formControlName="BankAccountNo" placeholder="XXXXXXXx" required>
+        <span class="danger" *ngIf="BankAccountNo.invalid && (BankAccountNo.dirty || BankAccountNo.touched)">
+            Please enter a bank account number.
+        </span>
       </div>
       
       <div class="form-group">
         <label> Skillset</label>
         <input formControlName="Skillset" placeholder="Ex:Programming/designing" required>
+        <span class="danger" *ngIf="Skillset.invalid && (Skillset.dirty || Skillset.touched)">
+            Please enter Skillset.
+        </span>
       </div>
       
       <div class="form-group">
         <label> DOB</label>
         <input formControlName="DOB" type="date" required>
+        <span class="danger" *ngIf="DOB.invalid && (DOB.dirty || DOB.touched)">
+            Please enter the date of birth.
+        </span>
       </div>
       
       <div class="form-group">
         <label> Date Of Join</label>
         <input formControlName="DateOfJoin" type="date" required>
+        <span class="danger" *ngIf="DateOfJoin.invalid && (DateOfJoin.dirty || DateOfJoin.touched)">
+            Please enter the date of join.
+        </span>
       </div>
       
       <div class="form-group">
         <label> Salary</label>
         <input formControlName="Salary" type="number" min="1000"  required>
+        <span class="danger" *ngIf="Salary.invalid && (Salary.dirty || Salary.touched)">
+            Please enter the salary.
+        </span>
       </div>
      
       <button>submit</button>
