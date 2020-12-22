@@ -36,6 +36,9 @@ import { ViewEmployeeComponent } from './components/employee/view-employee/view-
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
 import { EditprojectComponent } from './components/project/editproject/editproject.component';
+import { AddProjectComponent } from './components/project/add-project/add-project.component';
+import { ProjectComponent } from './components/project/project.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,9 @@ import { EditprojectComponent } from './components/project/editproject/editproje
     ViewClientComponent,
     EditClientComponent,
     UpdateEmployeeComponent,
-    EditprojectComponent
+    EditprojectComponent,
+    AddProjectComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,8 @@ import { EditprojectComponent } from './components/project/editproject/editproje
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     ClientsService,
