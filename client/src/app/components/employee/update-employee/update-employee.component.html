@@ -1,7 +1,7 @@
 <div class="add-employee">
     <div class="form">
       <form class="main" [formGroup]="EmployeeAddForm" >
-        <h1>ADD EMPLOYEE</h1>
+        <h1>UPDATE EMPLOYEE DETAILS</h1>
         <div class="form-group">
           <label for="type"> TYPE</label>
           <select formControlName="Type" id="type">
@@ -51,6 +51,7 @@
           <label> Salary</label>
           <input formControlName="Salary" type="number" min="1000"  required>
         </div>
+       
        
         <button (click)="updateShits()">Update</button>
       </form>
