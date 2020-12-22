@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-employee',
@@ -20,6 +21,7 @@ export class UpdateEmployeeComponent implements OnInit {
     private _commonService: CommonService,
     private route: ActivatedRoute,
     private router: Router,
+    private toastr: ToastrService
   ) {}
 
   
@@ -27,9 +29,10 @@ export class UpdateEmployeeComponent implements OnInit {
     this._employeeService.updateEmployee(this.id, this.EmployeeAddForm.value)
       .subscribe(resp => {
         if(resp.status == true) {
+          this.toastr.success('Employee update successfull');
           this.router.navigate(['/dashboard/employees'])
         } else {
-          console.log('Update employee failed');
+          this.toastr.error('Employee update failed');
         }
       })
   }

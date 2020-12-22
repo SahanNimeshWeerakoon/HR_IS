@@ -13,6 +13,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
+import { ProjectComponent } from './components/project/project.component';
+import { AddProjectComponent } from './components/project/add-project/add-project.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -24,14 +26,16 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'employees', component: EmployeeComponent },
-      { path: 'employee/:id', component: ViewEmployeeComponent },
-      { path:'addEmployee', component: AddComponent } ,
-      { path: 'clients', component: ClientlistComponent},
-      { path: 'client/:id', component: ViewClientComponent},
-      { path: 'addClient', component: AddclientComponent },
-      {path: 'editClient/:id', component:EditClientComponent},
-      { path: 'updateEmployee/:id', component: UpdateEmployeeComponent }
+      { path: 'employees', component: EmployeeComponent, canActivate: [AuthGuard] },
+      { path: 'employee/:id', component: ViewEmployeeComponent, canActivate: [AuthGuard] },
+      { path:'addEmployee', component: AddComponent, canActivate: [AuthGuard] },
+      { path: 'clients', component: ClientlistComponent, canActivate: [AuthGuard] },
+      { path: 'client/:id', component: ViewClientComponent, canActivate: [AuthGuard] },
+      { path: 'addClient', component: AddclientComponent, canActivate: [AuthGuard] },
+      {path: 'editClient/:id', component:EditClientComponent, canActivate: [AuthGuard] },
+      { path: 'updateEmployee/:id', component: UpdateEmployeeComponent, canActivate: [AuthGuard] },
+      { path: 'projects', component: ProjectComponent, canActivate: [AuthGuard] },
+      { path: 'addProject', component: AddProjectComponent, canActivate: [AuthGuard] },
     ]
   },
 ];

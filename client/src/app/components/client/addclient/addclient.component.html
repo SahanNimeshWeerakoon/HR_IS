@@ -10,18 +10,30 @@
             <div class="form-group">
                 <label for="name">Name</label>
                 <input placeholder="Name" formControlName="name">
+                <span class="danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    Please enter a name.
+                </span>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input placeholder="eg: user@gmail.com" formControlName="email">
+                <input type="email" placeholder="eg: user@gmail.com" formControlName="email">
+                <span class="danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    Please enter a valid email.
+                </span>
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
                 <input placeholder="Address" formControlName="address">
+                <span class="danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+                    Please enter an address.
+                </span>
             </div>
             <div class="form-group">
                 <label for="accountDet">Account Details</label>
                 <input placeholder="Account Details" formControlName="accountDetails">
+                <span class="danger" *ngIf="accountDetails.invalid && (accountDetails.dirty || accountDetails.touched)">
+                    Please enter account details.
+                </span>
             </div>
             
             <button class="main_button" mat-raised-button color="primary" (click)="handleSubmit()">ADD CLIENT</button>
