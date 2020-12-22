@@ -6,35 +6,21 @@ const bcrypt = require('bcryptjs');
 
 //employee schema
 const EmployeeSchema = mongoose.Schema({
-    Type: {
+    Type: { type: String },
+    Name: { type: String },
+    Address: { type: String },
+    NIC: { type: String },
+    BankAccountNo: { type: String },
+    Skillset: { type: String },
+    Dep: {
         type: String,
+        enum: [ 'developing', 'marketing' ]
     },
-    Name: {
-        type: String,
-    },
-    Address: {
-        type: String
-    },
-    NIC: {
-        type: String
-    },
-    BankAccountNo: {
-        type: String
-    },
-    Skillset: {
-        type: String
-    },
-    DOB: {
-        type:Date
-    },
-    DateOfJoin: {
-        type:Date   
-    },
-    Salary: {
-          type: String
-    },
+    DOB: { type:Date },
+    DateOfJoin: { type:Date    },
+    Salary: { type: String },
     lastpaid:{
-        type:String,
+        type: String,
         default:0
     },
  
