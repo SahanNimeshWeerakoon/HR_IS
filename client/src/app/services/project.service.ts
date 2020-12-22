@@ -20,7 +20,7 @@ export class ProjectService {
   }
 
   ongoingProjects(): Observable<any> {
-    return this.http.get('http://localhost:5000/project/ongoing');
+    return this.http.get<any[]>('http://localhost:5000/project/ongoing');
   }
 
   finishedProjects(): Observable<any> {
