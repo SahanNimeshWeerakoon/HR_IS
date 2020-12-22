@@ -25,7 +25,22 @@ export class ProjectService {
         return res;
       }));
   }
+<<<<<<< HEAD
  updatepro(id, data): Observable<any> {
   return this.http.put(`http://localhost:5000/project/${id}`, data);
  }
+=======
+
+  ongoingProjects(): Observable<any> {
+    return this.http.get('http://localhost:5000/project/ongoing');
+  }
+
+  finishedProjects(): Observable<any> {
+    return this.http.get('http://localhost:5000/project/finished');
+  }
+
+  unfinishedProjects(): Observable<any> {
+    return this.http.get('http://localhost:5000/project/unfinished');
+  }
+>>>>>>> e8789bb4821cade45260b17a98f5f671d9b58bb6
 }

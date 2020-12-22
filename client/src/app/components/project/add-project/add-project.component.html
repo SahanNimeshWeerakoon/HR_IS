@@ -45,6 +45,13 @@
                     <div class="sing-dev" *ngFor="let selectedDev of selectedDevs">{{ selectedDev.Name }}</div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select formControlName="status" id="status">
+                    <option value="0">Not Finished</option>
+                    <option value="1">Finished</option>
+                </select>
+            </div>
             
             <button class="main_button" mat-raised-button color="primary" (click)="handleSubmit()">ADD PROJECT</button>
         </form>
