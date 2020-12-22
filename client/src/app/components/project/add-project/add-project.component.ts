@@ -74,6 +74,7 @@ export class AddProjectComponent implements OnInit {
       description: new FormControl('', [ Validators.required ]),
       client: new FormControl('', [ Validators.required ]),
       deadline: new FormControl('', [ Validators.required ]),
+      status: new FormControl('0')
     });
 
     this.clientService.fetchClient()

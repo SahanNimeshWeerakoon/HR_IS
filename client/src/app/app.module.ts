@@ -39,6 +39,8 @@ import { EditprojectComponent } from './components/project/editproject/editproje
 import { AddProjectComponent } from './components/project/add-project/add-project.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ToastrModule } from 'ngx-toastr';
+import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
+import { EmployeesService } from './services/employees.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { ToastrModule } from 'ngx-toastr';
     UpdateEmployeeComponent,
     EditprojectComponent,
     AddProjectComponent,
-    ProjectComponent
+    ProjectComponent,
+    OnGoingProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +87,7 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   providers: [
     ClientsService,
+    EmployeesService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
