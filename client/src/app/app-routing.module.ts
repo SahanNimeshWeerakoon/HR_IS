@@ -15,6 +15,7 @@ import { ViewClientComponent } from './components/client/view-client/view-client
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
 import { ProjectComponent } from './components/project/project.component';
 import { AddProjectComponent } from './components/project/add-project/add-project.component';
+import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
+      { path: '', component: OnGoingProjectsComponent, canActivate: [AuthGuard] },
       { path: 'employees', component: EmployeeComponent, canActivate: [AuthGuard] },
       { path: 'employee/:id', component: ViewEmployeeComponent, canActivate: [AuthGuard] },
       { path:'addEmployee', component: AddComponent, canActivate: [AuthGuard] },

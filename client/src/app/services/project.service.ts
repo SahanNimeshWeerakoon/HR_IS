@@ -18,4 +18,16 @@ export class ProjectService {
         return res;
       }));
   }
+
+  ongoingProjects(): Observable<any> {
+    return this.http.get('http://localhost:5000/project/ongoing');
+  }
+
+  finishedProjects(): Observable<any> {
+    return this.http.get('http://localhost:5000/project/finished');
+  }
+
+  unfinishedProjects(): Observable<any> {
+    return this.http.get('http://localhost:5000/project/unfinished');
+  }
 }

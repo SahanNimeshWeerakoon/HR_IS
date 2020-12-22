@@ -17,6 +17,10 @@ const ProjectSchema = new Schema({
     },
     developers: {
         type: [Object]
+    },
+    status: {
+        type: Boolean,
+        default: 0
     }
 });
 
