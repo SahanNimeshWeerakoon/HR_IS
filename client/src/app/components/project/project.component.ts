@@ -23,7 +23,7 @@ export class ProjectComponent {
         this.onGoing = res;
       });
     
-      //fetch finished
+    //fetch finished
     this.projectSerivce. finishedProjects()
       .subscribe(res => {
         this.finished = res;
