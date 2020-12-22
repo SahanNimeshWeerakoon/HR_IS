@@ -17,9 +17,13 @@
         <div class="child">{{ client.amountPaid }}</div>
         <div class="child">
           <a routerLink="/dashboard/client/{{client._id}}">
-            <span class="material-icons">
-              visibility
-            </span>
+            <span class="material-icons"> visibility </span>
+          </a>
+          <a routerLink="/dashboard/editClient/{{client._id}}">
+            <span class="material-icons"> edit </span>
+          </a>
+          <a (click)="deleteClient(client._id)">
+            <span class="material-icons"> delete </span>
           </a>
         </div>
       </div >

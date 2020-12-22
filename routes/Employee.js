@@ -23,7 +23,6 @@ router.get('/find/:id', (req, res) => {
       })
 })
 
-
 router.post('/addEmployee', (req, res, next) => {
     let newEmployee = new Employee({
     Type: req.body.Type,
@@ -59,7 +58,8 @@ router.put('/:id', (req, res)=>{
       DateOfJoin: req.body.DateOfJoin,
       Salary: req.body.Salary,
    }
-   Employee.findOneAndUpdate({_id: id}, req.body)
+   
+   Employee.findOneAndUpdate({_id: id}, employee)
       .then(data => {
          return res.json({status: true, data});
       })
@@ -67,4 +67,16 @@ router.put('/:id', (req, res)=>{
          console.log(err);
       });
 });
+
+router.delete('/delete/:id', (req, res) => {
+   Employee.deleteOne({ _id: req.params.id })
+        .then(data => {
+            return res.json({ success: true, data });
+        })
+        .catch(err => {
+            console.log(err);
+            return res.json({ success: false, err })
+        })
+})
+
 module.exports = router;

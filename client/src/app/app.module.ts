@@ -35,6 +35,7 @@ import { ClientlistComponent } from './components/client/clientlist/clientlist.c
 import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
+import { EditprojectComponent } from './components/project/editproject/editproject.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +54,9 @@ import { UpdateEmployeeComponent } from './components/employee/update-employee/u
     DashboardNavComponent,
     ViewEmployeeComponent,
     ViewClientComponent,
+    EditClientComponent,
     UpdateEmployeeComponent,
-    EditClientComponent
+    EditprojectComponent
   ],
   imports: [
     BrowserModule,

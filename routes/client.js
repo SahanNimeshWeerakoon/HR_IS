@@ -31,6 +31,7 @@ router.get('', (req, res, next) => {
             console.log(err)
         });
 });
+
 router.get('/:id', (req, res,) => {
     const id = req.params.id;
     
@@ -63,6 +64,7 @@ router.put('/:id', (req, res,) => {
         })
 
 });
+
 router.get('/find/:id', (req, res) => {
     Client.findOne({ _id: req.params.id })
         .then(data => {
@@ -70,6 +72,17 @@ router.get('/find/:id', (req, res) => {
         })
         .catch(err => {
             console.log({ from: 'find client', err });
+        })
+});
+
+router.delete('/delete/:id', (req, res) => {
+    Client.deleteOne({ _id: req.params.id })
+        .then(data => {
+            return res.json({ success: true, data });
+        })
+        .catch(err => {
+            console.log(err);
+            return res.json({ success: false, err })
         })
 });
 
