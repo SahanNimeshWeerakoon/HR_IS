@@ -54,9 +54,9 @@ router.post('/addEmployee', (req, res, next) => {
     return res.json(data)
     }).catch(err=>{
        console.log(err);
-    });
-});
+    })
 
+    });
 router.put('/:id', (req, res)=>{
    const id = req.params.id;
    const employee = {
