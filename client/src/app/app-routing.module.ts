@@ -16,6 +16,7 @@ import { UpdateEmployeeComponent } from './components/employee/update-employee/u
 import { ProjectComponent } from './components/project/project.component';
 import { AddProjectComponent } from './components/project/add-project/add-project.component';
 import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
+import { EditprojectComponent } from './components/project/editproject/editproject.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: OnGoingProjectsComponent, canActivate: [AuthGuard] },
+      { path: '', component: OnGoingProjectsComponent, canActivate: [AuthGuard] },
       { path: 'employees', component: EmployeeComponent, canActivate: [AuthGuard] },
       { path: 'employee/:id', component: ViewEmployeeComponent, canActivate: [AuthGuard] },
       { path:'addEmployee', component: AddComponent, canActivate: [AuthGuard] },
@@ -38,6 +40,7 @@ const routes: Routes = [
       { path: 'updateEmployee/:id', component: UpdateEmployeeComponent, canActivate: [AuthGuard] },
       { path: 'projects', component: ProjectComponent, canActivate: [AuthGuard] },
       { path: 'addProject', component: AddProjectComponent, canActivate: [AuthGuard] },
+      { path: 'project/:id', component: EditprojectComponent, canActivate: [AuthGuard]}
     ]
   },
 ];

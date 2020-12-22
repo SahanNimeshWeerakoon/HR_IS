@@ -1,21 +1,38 @@
-@import "../../scss/mixins.scss";
-@import "../../scss/vars.scss";
+@import '../../scss/mixins.scss';
+@import '../../scss/vars.scss';
 
 .employee-list {
-  margin-top: 150px;
-  @include flex-center;
-  .employee-table {
-    width: 90%;
-    .parent {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 4%;
-      flex-direction: row;
-      &:nth-child(2) {
-        .child {
-          font-weight: bold;
-          color: #363636;
+    margin-top: 150px;
+    @include flex-center;
+    .employee-table {
+        width: 90%;
+        .parent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4%;
+            flex-direction:row;
+            &:nth-child(2) {
+                .child {
+                    font-weight: bold;
+                    color: #363636;
+                }
+            }
+            .child{
+                width:20%;  
+                font-size: 20px;
+                text-align: center;
+                a {
+                    padding: 0 10px;
+                    color: $primary-color;
+                    &:last-child {
+                        color: #f00;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
         }
       }
       .child {

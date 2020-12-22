@@ -1,22 +1,44 @@
-@import "../../../scss/mixins.scss";
-@import "../../../scss/vars.scss";
+@import '../../../scss/mixins.scss';
+@import '../../../scss/vars.scss';
 
 .client-list {
-  margin-top: 150px;
-  @include flex-center;
-  .client-table {
-    width: 90%;
-    .parent {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 4%;
-      flex-direction: row;
-      &:nth-child(2) {
-        .child {
-          font-weight: bold;
-          color: #363636;
-        }
+    margin-top: 150px;
+    @include flex-center;
+    .client-table {
+      width: 90%;
+      .parent{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 4%;
+          flex-direction:row;
+          &:nth-child(2) {
+              .child {
+                  font-weight: bold;
+                  color: #363636;
+              }
+          }
+          .child{
+              width:20%;  
+              font-size: 20px;
+              text-align: center;
+              a {
+                  padding: 0 10px;
+                  color: $primary-color;
+                  &:last-child {
+                      color: #f00;
+                  }
+                  &:hover {
+                      cursor: pointer;
+                  }
+              }
+          }
+          .child1{
+              width:20%;
+              font-size: 27px;
+              font-weight: bold; 
+              font-family: 'Times New Roman', Times, serif;
+          }
       }
       .child {
         width: 20%;
@@ -40,18 +62,17 @@
         font-family: "Times New Roman", Times, serif;
       }
     }
-  }
-  .child {
-    width: 20%;
-    font-size: 20px;
-    text-align: center;
-  }
-  .child1 {
-    width: 20%;
-    font-size: 27px;
-    font-weight: bold;
-    font-family: "Times New Roman", Times, serif;
-  }
+}
+.child {
+  width: 20%;
+  font-size: 20px;
+  text-align: center;
+}
+.child1 {
+  width: 20%;
+  font-size: 27px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
 }
 h1 {
   text-align: center;
@@ -59,7 +80,6 @@ h1 {
   letter-spacing: 3px;
   font-weight: 800;
 }
-
 .btn {
   position: absolute;
   right: 50px;

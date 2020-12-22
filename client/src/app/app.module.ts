@@ -36,9 +36,9 @@ import { ViewEmployeeComponent } from './components/employee/view-employee/view-
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
 import { EditprojectComponent } from './components/project/editproject/editproject.component';
-import { AddProjectComponent } from './components/project/add-project/add-project.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AddProjectComponent } from './components/project/add-project/add-project.component';
 import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
 import { EmployeesService } from './services/employees.service';
 
@@ -64,7 +64,8 @@ import { EmployeesService } from './services/employees.service';
     EditprojectComponent,
     AddProjectComponent,
     ProjectComponent,
-    OnGoingProjectsComponent
+    OnGoingProjectsComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

@@ -22,11 +22,13 @@ export class ProjectComponent {
       .subscribe(res => {
         this.onGoing = res;
       });
+    
       //fetch finished
     this.projectSerivce. finishedProjects()
-    .subscribe(res => {
-      this.finished = res;
-    });
+      .subscribe(res => {
+        this.finished = res;
+      });
+    
     //fetch notfinished
     this.projectSerivce.unfinishedProjects()
       .subscribe(res => {
