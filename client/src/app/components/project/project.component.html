@@ -1,1 +1,50 @@
-<p>project works!</p>
+<a routerLink="/dashboard/addProject">
+    <button class="btn" type="button">ADD PROJECT</button>
+  </a>
+
+<div class="project-list">
+    <div class="project-table">
+       <h1>PROJECT LIST</h1>
+       <div class="parent">
+           <h2>ON GOING PROJECTS</h2>
+        
+          <div class="child1"> Name </div>
+          <div class="child1"> Client </div>
+          <div class="child1"> Description </div>
+          <div class="child"></div>
+       </div>
+        <div class="parent" *ngFor="let project of onGoing ">
+            <div class="child">{{ project.name }}</div>    
+            <div class="child">{{ project.client  }}</div>        
+            <div class="child">{{ project.description }}</div>
+        </div>
+
+        <div class="parent">
+            <h2>FINISHED PROJECTS</h2>
+         
+           <div class="child1"> Name </div>
+           <div class="child1"> Client </div>
+           <div class="child1"> Description </div>
+           <div class="child"></div>
+        </div>
+         <div class="parent" *ngFor="let project of finished ">
+             <div class="child">{{ project.name }}</div>    
+             <div class="child">{{ project.client  }}</div>        
+             <div class="child">{{ project.description }}</div>
+         </div>
+
+         <div class="parent">
+            <h2>NOTFINISHED PROJECTS</h2>
+         
+           <div class="child1"> Name </div>
+           <div class="child1"> Client </div>
+           <div class="child1"> Description </div>
+           <div class="child1"></div>
+        </div>
+         <div class="parent" *ngFor="let project of notFinished ">
+             <div class="child">{{ project.name }}</div>    
+             <div class="child">{{ project.client  }}</div>        
+             <div class="child">{{ project.description }}</div>
+         </div>
+    </div>
+</div>

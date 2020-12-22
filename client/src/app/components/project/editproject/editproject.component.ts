@@ -99,6 +99,4 @@ export class EditprojectComponent implements OnInit {
         ]
       })
   }
-
- 
-  }
+}

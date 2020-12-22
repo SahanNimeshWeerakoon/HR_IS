@@ -22,6 +22,7 @@ export class ClientlistComponent {
       .subscribe(resp => {
         if(resp.success) {
           this.ngOnInit();
+          console.log('Client Deleted')
         } else {
           console.log('Delete client error');
         }

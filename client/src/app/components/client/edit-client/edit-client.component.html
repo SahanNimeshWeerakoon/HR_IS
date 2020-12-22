@@ -1,24 +1,27 @@
-<form  [formGroup]="clientAddForm" class="main_form">
-
-    <mat-form-field class="child">
-        <input matInput placeholder="Name" formControlName="name">
-    </mat-form-field>
-     <br>
-    <mat-form-field class="child">
-        <input matInput placeholder = "Email" formControlName="email" >
-        <mat-hint>Ex:user@gmail.com</mat-hint>
-    </mat-form-field> 
-     <br>
-    <mat-form-field class="child">
-        <input matInput placeholder="Address" formControlName="address">
-    </mat-form-field>
-     <br>
-    <mat-form-field class="child">
-    <input matInput placeholder="Account Details" formControlName="accountDetails">
-    </mat-form-field>
+<div class="edit-client">
+    <form  [formGroup]="clientAddForm" class="main_form">
+        <h1>EDIT CLIENT</h1>
+        <div class="child">
+            <label for="name">Name:</label>
+            <input   formControlName="name">
+         </div>
     
-    <br>
+        <div class="child">
+            <label for="name">Email:</label>
+            <input   formControlName="email" >
+        </div> 
+     
+        <div class="child">
+            <label for="name">Address:</label>
+            <input   formControlName="address">
+        </div>
+  
+        <div class="child">
+            <label for="name">Account Details:</label>
+            <input  formControlName="accountDetails">
+        </div>
+    
 
-<button class="main_button" mat-raised-button color="primary"  (click)="updateClient()">UPDATE CLIENT</button>
-
-</form>
+        <button class="main_button"  (click)="updateClient()">UPDATE CLIENT</button>
+    </form>
+</div>

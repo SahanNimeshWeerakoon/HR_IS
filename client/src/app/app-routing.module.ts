@@ -15,13 +15,8 @@ import { ViewClientComponent } from './components/client/view-client/view-client
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
 import { ProjectComponent } from './components/project/project.component';
 import { AddProjectComponent } from './components/project/add-project/add-project.component';
-<<<<<<< HEAD
-import { EditprojectComponent } from './components/project/editproject/editproject.component';
-
-
-=======
 import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
->>>>>>> e8789bb4821cade45260b17a98f5f671d9b58bb6
+import { EditprojectComponent } from './components/project/editproject/editproject.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -33,18 +28,8 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
-<<<<<<< HEAD
-      // { path: 'employees', component: EmployeeComponent },
-      // { path: 'employee/:id', component: ViewEmployeeComponent },
-      // { path:'addEmployee', component: AddComponent } ,
-      // { path: 'clients', component: ClientlistComponent},
-      // { path: 'client/:id', component: ViewClientComponent},
-      // { path: 'addClient', component: AddclientComponent },
-      // { path: 'updateEmployee/:id', component: UpdateEmployeeComponent },
-      // {path: 'editClient/:id', component:EditClientComponent},
-=======
       { path: '', component: OnGoingProjectsComponent, canActivate: [AuthGuard] },
->>>>>>> e8789bb4821cade45260b17a98f5f671d9b58bb6
+      { path: '', component: OnGoingProjectsComponent, canActivate: [AuthGuard] },
       { path: 'employees', component: EmployeeComponent, canActivate: [AuthGuard] },
       { path: 'employee/:id', component: ViewEmployeeComponent, canActivate: [AuthGuard] },
       { path:'addEmployee', component: AddComponent, canActivate: [AuthGuard] },
@@ -55,10 +40,7 @@ const routes: Routes = [
       { path: 'updateEmployee/:id', component: UpdateEmployeeComponent, canActivate: [AuthGuard] },
       { path: 'projects', component: ProjectComponent, canActivate: [AuthGuard] },
       { path: 'addProject', component: AddProjectComponent, canActivate: [AuthGuard] },
-<<<<<<< HEAD
       { path: 'project/:id', component: EditprojectComponent, canActivate: [AuthGuard]}
-=======
->>>>>>> e8789bb4821cade45260b17a98f5f671d9b58bb6
     ]
   },
 ];

@@ -1,5 +1,5 @@
-@import '../../../scss/mixins.scss';
-@import '../../../scss/vars.scss';
+@import "../../../scss/mixins.scss";
+@import "../../../scss/vars.scss";
 
 .add-client {
   min-height: 100vh;
@@ -12,7 +12,8 @@
       }
       .form-group {
         margin-bottom: 18px;
-        label, input{
+        label,
+        input {
           width: 100%;
           padding: 6px 0;
           color: #999;
@@ -23,8 +24,9 @@
         label {
           color: $text-color;
         }
-        input, select {
-          border: 1px solid #EEE;
+        input,
+        select {
+          border: 1px solid #eee;
         }
       }
       button {

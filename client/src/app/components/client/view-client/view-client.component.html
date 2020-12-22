@@ -1,6 +1,6 @@
 <div class="view-emp">
     <div class="content" *ngIf="employee">
-        <h2>EMPLOYEE DETAILS</h2>
+        <h2>CLIENT DETAILS</h2>
         <div class="group" *ngFor="let prop of empProps">
             <span *ngIf="(prop !== '_id' && prop !== '__v')" class="property">
                 <div class="title">
@@ -10,5 +10,11 @@
                 <div class="value">{{ employee[prop] }}</div>
             </span>
         </div>
+        <button>
+            <a routerLink="/dashboard/editClient/{{employee._id}}">EDIT CLIENT</a>
+        </button>
+        <button>
+            <a routerLink="/dashboard/clients" (click)="deleteClient(employee._id)">DELETE CLIENT</a>
+        </button>
     </div>
 </div>
