@@ -39,8 +39,11 @@ import { EditprojectComponent } from './components/project/editproject/editproje
 import { AddProjectComponent } from './components/project/add-project/add-project.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ToastrModule } from 'ngx-toastr';
+<<<<<<< HEAD
+=======
 import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
 import { EmployeesService } from './services/employees.service';
+>>>>>>> e8789bb4821cade45260b17a98f5f671d9b58bb6
 
 @NgModule({
   declarations: [
@@ -63,8 +66,12 @@ import { EmployeesService } from './services/employees.service';
     UpdateEmployeeComponent,
     EditprojectComponent,
     AddProjectComponent,
+<<<<<<< HEAD
+    ProjectComponent
+=======
     ProjectComponent,
     OnGoingProjectsComponent
+>>>>>>> e8789bb4821cade45260b17a98f5f671d9b58bb6
   ],
   imports: [
     BrowserModule,

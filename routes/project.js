@@ -12,7 +12,7 @@ router.post('/addProject', (req ,res) => {
         developers: req.body.devs,
         status: req.body.status
     });
-
+   
     newProject.save()
         .then(data => {
             return res.json({ success: true, data });
@@ -21,6 +21,46 @@ router.post('/addProject', (req ,res) => {
             console.log({ from: 'add project', err });
         });
 });
+router.get('/', (req, res)=>{
+    Project.find({})
+       .then(data => {
+          res.json(data);
+       })
+       .catch((err)=>{
+          console.log({from: 'fetch project', err});
+       })
+ });
+router.get('/find/:id', (req, res) => {
+    Project.findOne({ _id: req.params.id })
+       .then(data => {
+          return res.json(data);
+       })
+       .catch(err => {
+          console.log({from: 'find project', err});
+       })
+ })
+ router.put('/:id', (req, res)=>{
+    const id = req.params.id;
+    const project = {
+        name: req.body.name,
+        description: req.body.description,
+        client: req.body.client,
+        deadline: req.body.deadline,
+        developers: req.body.devs
+    }   
+    Project.findOneAndUpdate({_id:id}, req.body)
+    .then(data => {
+        return res.json({status: true, data});
+        })
+        .catch((err)=>{
+        console.log(err);
+        })
+    
+        }
+ 
+    )
+
+
 
 router.get('/ongoing', (req, res) => {
     const currDate = new Date();
