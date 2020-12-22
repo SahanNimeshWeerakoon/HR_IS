@@ -7,6 +7,7 @@ const test = require('./routes/test');
 const client = require('./routes/client');
 const config = require('./config/database');
 const user = require('./routes/user');
+const project = require('./routes/project');
 const employee = require('./routes/Employee');
 
 const app = new express();
@@ -27,6 +28,7 @@ app.use('/test', test);
 app.use('/employee', employee);
 app.use('/client', client);
 app.use('/user', user);
+app.use('/project', project);
 
 //passport middleware
 

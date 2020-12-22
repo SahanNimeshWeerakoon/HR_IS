@@ -35,10 +35,17 @@ export class EmployeesService {
   return this.http.get(`http://localhost:5000/employee/find/${id}`);
  }
  
+ // Find single employee
  findEmployee(id): Observable<any> {
   return this.http.get(`http://localhost:5000/employee/find/${id}`);
  }
 
+ // Find employee by department
+ findEmpFromDep(dep): Observable<any> {
+   return this.http.get(`http://localhost:5000/employee/findByDep/${dep}`);
+ }
+
+ // Update an employee
  updateEmployee(id, data): Observable<any> {
   return this.http.put(`http://localhost:5000/employee/${id}`, data);
  }
