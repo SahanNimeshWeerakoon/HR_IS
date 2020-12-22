@@ -23,6 +23,19 @@ router.get('/find/:id', (req, res) => {
       })
 })
 
+router.get('/findByDep/:dep', (req, res) => {
+   Employee.find({ Dep: req.params.dep })
+      .then(data => {
+         return res.json(data);
+      })
+      .catch(err => {
+         console.log({
+            from: 'findEmpByDep',
+            err
+         });
+      })
+});
+
 router.post('/addEmployee', (req, res, next) => {
     let newEmployee = new Employee({
     Type: req.body.Type,
@@ -34,17 +47,16 @@ router.post('/addEmployee', (req, res, next) => {
     DOB: req.body.DOB,
     DateOfJoin: req.body.DateOfJoin,
     Salary: req.body.Salary,
-    
-    
+    Dep: req.body.Dep    
    });
    
     newEmployee.save().then( data =>{
     return res.json(data)
     }).catch(err=>{
        console.log(err);
-    });
-});
+    })
 
+    });
 router.put('/:id', (req, res)=>{
    const id = req.params.id;
    const employee = {

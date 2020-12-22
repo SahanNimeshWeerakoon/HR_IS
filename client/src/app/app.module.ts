@@ -35,6 +35,12 @@ import { ClientlistComponent } from './components/client/clientlist/clientlist.c
 import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
 import { ViewClientComponent } from './components/client/view-client/view-client.component';
 import { UpdateEmployeeComponent } from './components/employee/update-employee/update-employee.component';
+import { EditprojectComponent } from './components/project/editproject/editproject.component';
+import { AddProjectComponent } from './components/project/add-project/add-project.component';
+import { ProjectComponent } from './components/project/project.component';
+import { ToastrModule } from 'ngx-toastr';
+import { OnGoingProjectsComponent } from './authentication/dashboard/on-going-projects/on-going-projects.component';
+import { EmployeesService } from './services/employees.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +60,11 @@ import { UpdateEmployeeComponent } from './components/employee/update-employee/u
     ViewEmployeeComponent,
     ViewClientComponent,
     EditClientComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    EditprojectComponent,
+    AddProjectComponent,
+    ProjectComponent,
+    OnGoingProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,10 +82,12 @@ import { UpdateEmployeeComponent } from './components/employee/update-employee/u
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     ClientsService,
+    EmployeesService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

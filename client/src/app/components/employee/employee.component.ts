@@ -15,6 +15,8 @@ export class EmployeeComponent implements OnInit {
     private router: Router,
   ) { }
 
+
+  
   deleteEmployee(id) {
     this.employeeservice.deleteEmployee(id)
       .subscribe(resp => {
